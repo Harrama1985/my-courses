@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدرس 3 — node كيدير run لـ file</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-root=".." data-page="0004">
+  <div class="wrap">
+    <nav class="site-nav" data-nav></nav>
+
+    <p class="kicker">الدرس 3 · Node.js · مفهوم واحد · English بشوية</p>
+    <h1><bdi class="t" dir="ltr">node</bdi> كيدير <bdi class="t" dir="ltr">run</bdi> لـ <bdi class="t" dir="ltr">file</bdi></h1>
+    <p class="lede">
+      فالدرس اللي قبل، شفنا بلي
+      <bdi class="t" dir="ltr">Node</bdi>
+      هو
+      <bdi class="t" dir="ltr">runtime</bdi>.
+      اليوم غير خطوة وحدة:
+      عندك
+      <bdi class="t" dir="ltr">file</bdi>
+      ديال
+      <bdi class="t" dir="ltr">JavaScript</bdi>،
+      كتكتبي
+      <bdi class="t" dir="ltr">command</bdi>
+      فـ
+      <bdi class="t" dir="ltr">terminal</bdi>،
+      وهو كيدير
+      <bdi class="t" dir="ltr">run</bdi>.
+    </p>
+
+    <div class="legend">
+      <span class="chip fe"><i></i> Browser / page</span>
+      <span class="chip be"><i></i> Terminal / Node</span>
+      <span class="chip da"><i></i> File</span>
+      <span class="chip ex"><i></i> Error</span>
+    </div>
+
+    <div class="note">
+      هاد الدرس فيه كلمات
+      <bdi class="t" dir="ltr">English</bdi>
+      جديدة، قلال.
+      الجملة تبقى دارجة.
+      الكلمة الجديدة داخل صندوق، بحال
+      <bdi class="t" dir="ltr">run</bdi>.
+      اللائحة كاملة فـ
+      <a href="../ENGLISH.md"><bdi class="t" dir="ltr">ENGLISH.md</bdi></a>
+      باش ترجعي ليها.
+    </div>
+
+    <section class="section">
+      <p class="num">1</p>
+      <h2>🎯 شنو كنتعلمو؟</h2>
+      <p>
+        باش تشغّلي
+        <bdi class="t" dir="ltr">file</bdi>،
+        كتكتبي:
+      </p>
+      <pre class="term" dir="ltr"><span class="prompt">$</span> node hello.js</pre>
+      <p>
+        <bdi class="t" dir="ltr">node</bdi>
+        هي الـ
+        <bdi class="t" dir="ltr">command</bdi>.
+        <bdi class="t" dir="ltr">hello.js</bdi>
+        هو اسم الـ
+        <bdi class="t" dir="ltr">file</bdi>.
+        من بعد هاد السطر،
+        <bdi class="t" dir="ltr">Node</bdi>
+        كيدير
+        <bdi class="t" dir="ltr">start</bdi>
+        من الـ
+        <bdi class="t" dir="ltr">top</bdi>
+        ديال الـ
+        <bdi class="t" dir="ltr">file</bdi>،
+        سطر بسطر،
+        <bdi class="t" dir="ltr">then</bdi>
+        كيدير
+        <bdi class="t" dir="ltr">stop</bdi>
+        ملي يسالي.
+      </p>
+      <p>
+        المصدر:
+        الطريقة العادية هي
+        <bdi class="t" dir="ltr">node</bdi>
+        مع اسم الـ
+        <bdi class="t" dir="ltr">file</bdi>،
+        وخاصك تكوني فـ
+        <bdi class="t" dir="ltr">same</bdi>
+        <bdi class="t" dir="ltr">folder</bdi>.
+        <a href="https://nodejs.org/learn/command-line/run-nodejs-scripts-from-the-command-line" dir="ltr">Run Node.js scripts from the command line</a>
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">2</p>
+      <h2>🤔 علاش فهاد الـ <bdi class="t" dir="ltr">course</bdi>؟</h2>
+      <p>
+        من بعد، ملي نقيسو الـ
+        <bdi class="t" dir="ltr">agent</bdi>،
+        القياس ما غاديش يكون
+        <bdi class="t" dir="ltr">button</bdi>
+        فـ
+        <bdi class="t" dir="ltr">page</bdi>.
+        غادي يكون
+        <bdi class="t" dir="ltr">file</bdi>
+        كتكتبي ليه
+        <bdi class="t" dir="ltr">node score.js</bdi>.
+        هو كيسول، كيحسب، وكيدير
+        <bdi class="t" dir="ltr">print</bdi>
+        للـ
+        <bdi class="t" dir="ltr">score</bdi>
+        فـ
+        <bdi class="t" dir="ltr">terminal</bdi>.
+      </p>
+      <p>
+        إلا ما عرفتيش هاد الـ
+        <bdi class="t" dir="ltr">command</bdi>،
+        كلشي اللي من بعد
+        (الـ
+        <bdi class="t" dir="ltr">npm</bdi>،
+        الـ
+        <bdi class="t" dir="ltr">server</bdi>،
+        الـ
+        <bdi class="t" dir="ltr">env</bdi>)
+        غادي يبقى معلق.
+        اليوم غير هاد الباب.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">3</p>
+      <h2>🧠 شرح دارجة، ببطء</h2>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">terminal</bdi>
+        هي نافذة كتكتبي فيها أمر،
+        وما كتشوفيش فيها
+        <bdi class="t" dir="ltr">page</bdi>.
+        ما كاينش
+        <bdi class="t" dir="ltr">button</bdi>،
+        ما كاينش
+        <bdi class="t" dir="ltr">canvas</bdi>.
+        كاينة غير الكتابة، والسطر اللي كيرجع.
+      </p>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">command</bdi>
+        ديال اليوم فيها جوج حوايج، بهاد الترتيب:
+        <bdi class="t" dir="ltr">first</bdi>
+        الكلمة
+        <bdi class="t" dir="ltr">node</bdi>،
+        <bdi class="t" dir="ltr">then</bdi>
+        اسم الـ
+        <bdi class="t" dir="ltr">file</bdi>.
+        بلا اسم الـ
+        <bdi class="t" dir="ltr">file</bdi>،
+        <bdi class="t" dir="ltr">Node</bdi>
+        ما عندو والو يشغّل.
+      </p>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">folder</bdi>
+        هي البلاصة اللي فيها الـ
+        <bdi class="t" dir="ltr">files</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">terminal</bdi>
+        كيكون واقف فـ
+        <bdi class="t" dir="ltr">folder</bdi>
+        وحدة.
+        خاص هاديك تكون
+        <bdi class="t" dir="ltr">same</bdi>
+        <bdi class="t" dir="ltr">folder</bdi>
+        اللي فيها
+        <bdi class="t" dir="ltr">hello.js</bdi>.
+        <bdi class="t" dir="ltr">because</bdi>
+        <bdi class="t" dir="ltr">Node</bdi>
+        كيقلّب على الـ
+        <bdi class="t" dir="ltr">file</bdi>
+        فين واقف، ما كيقلّبش فالدار كاملة.
+      </p>
+      <p>
+        <bdi class="t" dir="ltr">console.log</bdi>
+        كيدير
+        <bdi class="t" dir="ltr">print</bdi>:
+        كيخرج نص.
+        فالـ
+        <bdi class="t" dir="ltr">browser</bdi>
+        كتشوفيه فـ
+        <bdi class="t" dir="ltr">DevTools</bdi>.
+        هنا كتشوفيه فـ
+        <bdi class="t" dir="ltr">terminal</bdi>.
+        نفس الـ
+        <bdi class="t" dir="ltr">function</bdi>،
+        بلاصة أخرى.
+      </p>
+      <p>
+        ملي آخر سطر يسالي، والـ
+        <bdi class="t" dir="ltr">code</bdi>
+        ما بقاش كيتسنّى
+        <bdi class="t" dir="ltr">network</bdi>
+        ولا
+        <bdi class="t" dir="ltr">server</bdi>،
+        البرنامج كيدير
+        <bdi class="t" dir="ltr">stop</bdi>
+        بوحدو.
+        كترجعي للـ
+        <bdi class="t" dir="ltr">terminal</bdi>
+        وتقدري تكتبي
+        <bdi class="t" dir="ltr">command</bdi>
+        جديدة.
+        هادشي
+        <bdi class="t" dir="ltr">same</bdi>
+        الفكرة ديال
+        <bdi class="t" dir="ltr">script</bdi>
+        قصير، ماشي
+        <bdi class="t" dir="ltr">app</bdi>
+        باقية محلولة.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">4</p>
+      <h2>🌍 تشبيه</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3><bdi class="t" dir="ltr">page</bdi> فـ <bdi class="t" dir="ltr">browser</bdi></h3>
+          <p>
+            بحال لوحة فالقاعة.
+            الناس كيشوفوها.
+            كتضغطي على
+            <bdi class="t" dir="ltr">button</bdi>
+            واللوحة كتبدّل.
+          </p>
+        </article>
+        <article class="card">
+          <h3><bdi class="t" dir="ltr">file</bdi> فـ <bdi class="t" dir="ltr">terminal</bdi></h3>
+          <p>
+            بحال ورقة وصفة فالمطبخ.
+            كتقرايها من الـ
+            <bdi class="t" dir="ltr">top</bdi>.
+            <bdi class="t" dir="ltr">first</bdi>
+            السطر اللول،
+            <bdi class="t" dir="ltr">then</bdi>
+            اللي من بعدو.
+            النتيجة كتخرج على الورق، ماشي على اللوحة ديال القاعة.
+          </p>
+        </article>
+      </div>
+      <p>
+        إلا الورقة ماشي فـ
+        <bdi class="t" dir="ltr">same</bdi>
+        <bdi class="t" dir="ltr">folder</bdi>
+        (نفس الدرج)،
+        كتجي
+        <bdi class="t" dir="ltr">error</bdi>:
+        ما لقيتيهاش.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">5</p>
+      <h2>🎨 رسوم</h2>
+
+      <h3>الرسم 1 — جوج بلايص</h3>
+      <div class="grid-2">
+        <div>
+          <p><strong><bdi class="t" dir="ltr">browser</bdi></strong></p>
+          <div class="flow">
+            <div class="box fe" dir="ltr">page</div>
+            <div class="arrow">↓</div>
+            <div class="box fe" dir="ltr">button · canvas · chat</div>
+            <div class="arrow">↓</div>
+            <div class="box fe">الناس كتشوف</div>
+          </div>
+        </div>
+        <div>
+          <p><strong><bdi class="t" dir="ltr">terminal</bdi></strong></p>
+          <div class="flow">
+            <div class="box be" dir="ltr">command: node hello.js</div>
+            <div class="arrow">↓</div>
+            <div class="box da" dir="ltr">file hello.js</div>
+            <div class="arrow">↓</div>
+            <div class="box be"><bdi class="t" dir="ltr">print</bdi> هنا، ثم <bdi class="t" dir="ltr">stop</bdi></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>الرسم 2 — الـ <bdi class="t" dir="ltr">command</bdi> مقسّمة</h3>
+      <div class="hflow" dir="ltr">
+        <div class="box be">node</div>
+        <div class="arrow">+</div>
+        <div class="box da">hello.js</div>
+        <div class="arrow">→</div>
+        <div class="box be">run</div>
+        <div class="arrow">→</div>
+        <div class="box da">print</div>
+        <div class="arrow">→</div>
+        <div class="box be">stop</div>
+      </div>
+      <p>
+        <bdi class="t" dir="ltr">first</bdi>
+        البرنامج اللي كيجري الـ
+        <bdi class="t" dir="ltr">code</bdi>.
+        <bdi class="t" dir="ltr">then</bdi>
+        شنو غادي يجرى.
+        إلا قلبتي الترتيب، ولا نسيتي واحد منهم، ما غاديش يخدم.
+      </p>
+
+      <h3>الرسم 3 — من الـ <bdi class="t" dir="ltr">top</bdi> لتحت</h3>
+      <div class="filecard">
+        <div class="filecard-name">hello.js</div>
+        <div class="filecard-line"><b>1</b> console.log("first") <em>start · first</em></div>
+        <div class="filecard-line"><b>2</b> console.log("then") <em>then</em></div>
+        <div class="filecard-line"><b>3</b> console.log("stop") <em>then stop</em></div>
+      </div>
+      <p>
+        ما كيقفزش للسطر 3
+        <bdi class="t" dir="ltr">because</bdi>
+        عجبو.
+        الترتيب هو الترتيب المكتوب.
+        هادشي
+        <bdi class="t" dir="ltr">same</bdi>
+        اللي كتعرفيه فـ
+        <bdi class="t" dir="ltr">JavaScript</bdi>:
+        السطر اللي فوق كيجري قبل اللي تحت، إلا كان
+        <bdi class="t" dir="ltr">await</bdi>
+        ولا
+        <bdi class="t" dir="ltr">callback</bdi>.
+        فهاد الـ
+        <bdi class="t" dir="ltr">examples</bdi>
+        ما كاينش
+        <bdi class="t" dir="ltr">await</bdi>.
+        من الفوق لتحت، واضح.
+      </p>
+
+      <h3>الرسم 4 — فين كيمشي الـ <bdi class="t" dir="ltr">print</bdi></h3>
+      <div class="flow">
+        <div class="box da">console.log("سلام")</div>
+        <div class="arrow">↓</div>
+        <div class="box be">Node</div>
+        <div class="arrow">↓</div>
+        <div class="box be">terminal</div>
+      </div>
+      <div class="flow">
+        <div class="box da">console.log("سلام")</div>
+        <div class="arrow">↓</div>
+        <div class="box fe">page · canvas · chat</div>
+      </div>
+      <p>
+        الطريق الثانية ما كاينااش نهار كتديري
+        <bdi class="t" dir="ltr">run</bdi>
+        بهاد الـ
+        <bdi class="t" dir="ltr">command</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">print</bdi>
+        ما كيطلعش فـ
+        <bdi class="t" dir="ltr">browser</bdi>.
+      </p>
+
+      <h3>الرسم 5 — <bdi class="t" dir="ltr">same folder</bdi>، ولا <bdi class="t" dir="ltr">error</bdi></h3>
+      <div class="grid-2">
+        <article class="card">
+          <h3>هادي خدامة</h3>
+          <pre class="term" dir="ltr"><span class="prompt">$</span> cd course
+<span class="prompt">$</span> node hello.js
+<span class="out">سلام</span></pre>
+          <p>
+            <bdi class="t" dir="ltr">cd</bdi>
+            كدخّلك لـ
+            <bdi class="t" dir="ltr">folder</bdi>.
+            من بعد،
+            <bdi class="t" dir="ltr">same</bdi>
+            <bdi class="t" dir="ltr">folder</bdi>
+            فيها
+            <bdi class="t" dir="ltr">hello.js</bdi>.
+          </p>
+        </article>
+        <article class="card">
+          <h3>هادي <bdi class="t" dir="ltr">error</bdi></h3>
+          <pre class="term" dir="ltr"><span class="prompt">$</span> node hello.js
+<span class="err">Error: Cannot find module</span>
+<span class="err">'/Users/you/hello.js'</span></pre>
+          <p>
+            الـ
+            <bdi class="t" dir="ltr">terminal</bdi>
+            واقف فـ
+            <bdi class="t" dir="ltr">folder</bdi>
+            أخرى.
+            <bdi class="t" dir="ltr">because</bdi>
+            الـ
+            <bdi class="t" dir="ltr">file</bdi>
+            ما كاينش قدامو.
+            الرسالة الحقيقية فيها سطور كتر.
+            السطر المهم:
+            <bdi class="t" dir="ltr">Cannot find module</bdi>.
+          </p>
+        </article>
+      </div>
+
+      <h3>الرسم 6 — <bdi class="t" dir="ltr">document</bdi> كيجيب <bdi class="t" dir="ltr">error</bdi></h3>
+      <div class="flow">
+        <div class="box da">document.body</div>
+        <div class="arrow">↓</div>
+        <div class="box be"><bdi class="t" dir="ltr">Node</bdi> كيقلّب على <bdi class="t" dir="ltr">page</bdi></div>
+        <div class="arrow">↓</div>
+        <div class="box ex">error · stop</div>
+      </div>
+      <p>
+        ما كاينش
+        <bdi class="t" dir="ltr">page</bdi>
+        هنا.
+        هادشي اللي شفناه فالدرس 2، دابا كتشوفيه كـ
+        <bdi class="t" dir="ltr">error</bdi>
+        حقيقي.
+      </p>
+
+      <h3>الرسم 7 — مقارنة مع <bdi class="t" dir="ltr">Next.js</bdi></h3>
+      <div class="grid-2">
+        <div>
+          <p><strong>كليكة فـ <bdi class="t" dir="ltr">UI</bdi></strong></p>
+          <div class="flow">
+            <div class="box fe">user</div>
+            <div class="arrow">↓</div>
+            <div class="box fe"><bdi class="t" dir="ltr">button</bdi> فـ <bdi class="t" dir="ltr">React</bdi></div>
+            <div class="arrow">↓</div>
+            <div class="box fe"><bdi class="t" dir="ltr">page</bdi> كتبدّل</div>
+          </div>
+        </div>
+        <div>
+          <p><strong><bdi class="t" dir="ltr">run</bdi> لـ <bdi class="t" dir="ltr">file</bdi></strong></p>
+          <div class="flow">
+            <div class="box be">نتي فـ <bdi class="t" dir="ltr">terminal</bdi></div>
+            <div class="arrow">↓</div>
+            <div class="box be" dir="ltr">node hello.js</div>
+            <div class="arrow">↓</div>
+            <div class="box be"><bdi class="t" dir="ltr">print</bdi> ثم <bdi class="t" dir="ltr">stop</bdi></div>
+          </div>
+        </div>
+      </div>
+      <p>
+        ملي كتكتبي
+        <bdi class="t" dir="ltr">npm run dev</bdi>
+        فـ
+        <bdi class="t" dir="ltr">Next</bdi>،
+        حتى هي
+        <bdi class="t" dir="ltr">command</bdi>
+        فـ
+        <bdi class="t" dir="ltr">terminal</bdi>.
+        الفرق:
+        هاديك كتبقى
+        <bdi class="t" dir="ltr">start</bdi>
+        وما كتديرش
+        <bdi class="t" dir="ltr">stop</bdi>
+        بوحدها،
+        <bdi class="t" dir="ltr">because</bdi>
+        الـ
+        <bdi class="t" dir="ltr">server</bdi>
+        كيتسنّى الـ
+        <bdi class="t" dir="ltr">requests</bdi>.
+        <bdi class="t" dir="ltr">npm</bdi>
+        بوحدو غادي نشرحوه فالدرس الجاي.
+        اليوم غير
+        <bdi class="t" dir="ltr">node</bdi>
+        مع
+        <bdi class="t" dir="ltr">file</bdi>
+        كيسالي.
+      </p>
+
+      <h3>الرسم 8 — نفس الشكل، من بعد، للقياس</h3>
+      <div class="hflow" dir="ltr">
+        <div class="box da">score.js</div>
+        <div class="arrow">→</div>
+        <div class="box be">node score.js</div>
+        <div class="arrow">→</div>
+        <div class="box md">model</div>
+        <div class="arrow">→</div>
+        <div class="box da">print: score</div>
+      </div>
+      <p>
+        ما غاديش نبنيو هاد الـ
+        <bdi class="t" dir="ltr">file</bdi>
+        اليوم.
+        غير باش تشوفي علاش الـ
+        <bdi class="t" dir="ltr">command</bdi>
+        مهمة:
+        القياس غادي يكون
+        <bdi class="t" dir="ltr">same</bdi>
+        الحركة.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">6</p>
+      <h2>🔍 الخطوات فدماغك</h2>
+      <ol>
+        <li>
+          كتكتبي الـ
+          <bdi class="t" dir="ltr">code</bdi>
+          فـ
+          <bdi class="t" dir="ltr">file</bdi>
+          سميتو
+          <bdi class="t" dir="ltr">hello.js</bdi>.
+        </li>
+        <li>
+          كتحلّي
+          <bdi class="t" dir="ltr">terminal</bdi>.
+        </li>
+        <li>
+          كتدخلي لـ
+          <bdi class="t" dir="ltr">folder</bdi>
+          بالـ
+          <bdi class="t" dir="ltr">cd</bdi>،
+          باش تكوني فـ
+          <bdi class="t" dir="ltr">same</bdi>
+          بلاصة مع الـ
+          <bdi class="t" dir="ltr">file</bdi>.
+        </li>
+        <li>
+          كتكتبي
+          <bdi class="t" dir="ltr">node hello.js</bdi>
+          وكتضغطي
+          <bdi class="t" dir="ltr">Enter</bdi>.
+        </li>
+        <li>
+          <bdi class="t" dir="ltr">Node</bdi>
+          كيدير
+          <bdi class="t" dir="ltr">start</bdi>
+          من الـ
+          <bdi class="t" dir="ltr">top</bdi>.
+        </li>
+        <li>
+          كل
+          <bdi class="t" dir="ltr">console.log</bdi>
+          كيدير
+          <bdi class="t" dir="ltr">print</bdi>
+          فـ
+          <bdi class="t" dir="ltr">terminal</bdi>.
+        </li>
+        <li>
+          آخر سطر يسالي،
+          <bdi class="t" dir="ltr">then</bdi>
+          كيدير
+          <bdi class="t" dir="ltr">stop</bdi>.
+        </li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <p class="num">7</p>
+      <h2>💻 <bdi class="t" dir="ltr">examples</bdi></h2>
+      <p>
+        أربعة
+        <bdi class="t" dir="ltr">examples</bdi>.
+        كل واحد فيهم الـ
+        <bdi class="t" dir="ltr">file</bdi>،
+        الـ
+        <bdi class="t" dir="ltr">command</bdi>،
+        وشنو كيخرج.
+        الزر
+        <bdi class="t" dir="ltr">run</bdi>
+        غير كيورّيك النتيجة هنا.
+        ماشي
+        <bdi class="t" dir="ltr">Node</bdi>
+        حقيقي على الماكينة ديالك.
+      </p>
+
+      <h3><bdi class="t" dir="ltr">example</bdi> 1 — <bdi class="t" dir="ltr">print</bdi> واحد</h3>
+      <pre dir="ltr" class="code-block"><code><span class="c">// hello.js</span>
+console.log(<span class="s">"سلام من Node"</span>);</code></pre>
+      <pre class="term" dir="ltr"><span class="prompt">$</span> node hello.js
+<span class="out">سلام من Node</span></pre>
+      <div class="sim" data-sim data-output="سلام من Node">
+        <p>جرّبي الزر. خاص يبان سطر واحد، <bdi class="t" dir="ltr">then</bdi> يسالي.</p>
+        <button class="sim-btn" type="button" data-run>run</button>
+        <pre class="term" data-out dir="ltr"></pre>
+      </div>
+
+      <h3><bdi class="t" dir="ltr">example</bdi> 2 — الترتيب: <bdi class="t" dir="ltr">first</bdi> ثم <bdi class="t" dir="ltr">then</bdi></h3>
+      <pre dir="ltr" class="code-block"><code><span class="c">// order.js</span>
+console.log(<span class="s">"first"</span>);
+console.log(<span class="s">"then"</span>);
+console.log(<span class="s">"stop"</span>);</code></pre>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">print</bdi>
+        اللول هو
+        <bdi class="t" dir="ltr">first</bdi>
+        <bdi class="t" dir="ltr">because</bdi>
+        هو فالـ
+        <bdi class="t" dir="ltr">top</bdi>.
+      </p>
+      <div class="sim" data-sim data-output="first|then|stop">
+        <button class="sim-btn" type="button" data-run>run</button>
+        <pre class="term" data-out dir="ltr"></pre>
+      </div>
+
+      <h3><bdi class="t" dir="ltr">example</bdi> 3 — رقمين، بحال قياس صغير</h3>
+      <p>
+        ما زال ما كاينش
+        <bdi class="t" dir="ltr">model</bdi>.
+        غير باش تشوفي الشكل:
+        <bdi class="t" dir="ltr">file</bdi>
+        كيقارن جوج أرقام وكيدير
+        <bdi class="t" dir="ltr">print</bdi>.
+        من بعد، الأرقام غادي يجيو من الـ
+        <bdi class="t" dir="ltr">agent</bdi>.
+      </p>
+      <pre dir="ltr" class="code-block"><code><span class="c">// score.js</span>
+<span class="k">const</span> before = <span class="s">2</span>;
+<span class="k">const</span> after = <span class="s">5</span>;
+
+console.log(<span class="s">"first"</span>, before);
+console.log(<span class="s">"then"</span>, after);
+console.log(<span class="s">"same?"</span>, before === after);</code></pre>
+      <pre class="term" dir="ltr"><span class="prompt">$</span> node score.js
+<span class="out">first 2</span>
+<span class="out">then 5</span>
+<span class="out">same? false</span></pre>
+      <p>
+        <bdi class="t" dir="ltr">same?</bdi>
+        طلع
+        <bdi class="t" dir="ltr">false</bdi>
+        <bdi class="t" dir="ltr">because</bdi>
+        2 و 5 ماشي
+        <bdi class="t" dir="ltr">same</bdi>.
+        إلا بدّلتي
+        <bdi class="t" dir="ltr">after</bdi>
+        لـ 2، السطر الأخير كيولي
+        <bdi class="t" dir="ltr">true</bdi>.
+      </p>
+      <div class="sim" data-sim data-output="first 2|then 5|same? false">
+        <button class="sim-btn" type="button" data-run>run</button>
+        <pre class="term" data-out dir="ltr"></pre>
+      </div>
+
+      <h3><bdi class="t" dir="ltr">example</bdi> 4 — <bdi class="t" dir="ltr">error</bdi> ديال <bdi class="t" dir="ltr">document</bdi></h3>
+      <pre dir="ltr" class="code-block"><code><span class="c">// page.js  — هادي غادي طيح</span>
+document.body.style.background = <span class="s">"white"</span>;</code></pre>
+      <pre class="term" dir="ltr"><span class="prompt">$</span> node page.js
+<span class="err">ReferenceError: document is not defined</span></pre>
+      <p>
+        <bdi class="t" dir="ltr">error</bdi>
+        <bdi class="t" dir="ltr">because</bdi>
+        <bdi class="t" dir="ltr">document</bdi>
+        خاصو
+        <bdi class="t" dir="ltr">page</bdi>.
+        <bdi class="t" dir="ltr">Node</bdi>
+        كيدير
+        <bdi class="t" dir="ltr">stop</bdi>
+        هنا.
+        ما كاينش
+        <bdi class="t" dir="ltr">screen</bdi>
+        بيضاء.
+      </p>
+      <div class="sim" data-sim data-output="ReferenceError: document is not defined">
+        <button class="sim-btn" type="button" data-run>run</button>
+        <pre class="term" data-out dir="ltr"></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">8</p>
+      <h2>⚛️ مقارنة مع <bdi class="t" dir="ltr">Next.js</bdi></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>اللي كتعرفيه</th>
+            <th>فين كيجري</th>
+            <th>كيفاش كتبدّاي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><bdi class="t" dir="ltr">component</bdi> فـ React</td>
+            <td><bdi class="t" dir="ltr">browser</bdi> (أو <bdi class="t" dir="ltr">SSR</bdi>)</td>
+            <td>كتحلي الـ <bdi class="t" dir="ltr">page</bdi></td>
+          </tr>
+          <tr>
+            <td><bdi class="t" dir="ltr">npm run dev</bdi></td>
+            <td><bdi class="t" dir="ltr">terminal</bdi>، وكتبقى محلولة</td>
+            <td><bdi class="t" dir="ltr">command</bdi>، وما كتديرش <bdi class="t" dir="ltr">stop</bdi> بوحدها</td>
+          </tr>
+          <tr>
+            <td><bdi class="t" dir="ltr">node hello.js</bdi></td>
+            <td><bdi class="t" dir="ltr">terminal</bdi> برك</td>
+            <td><bdi class="t" dir="ltr">run</bdi>، <bdi class="t" dir="ltr">print</bdi>، <bdi class="t" dir="ltr">stop</bdi></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <bdi class="t" dir="ltr">API route</bdi>
+        فـ
+        <bdi class="t" dir="ltr">Next</bdi>
+        حتى هي
+        <bdi class="t" dir="ltr">file</bdi>،
+        ولكن
+        <bdi class="t" dir="ltr">Next</bdi>
+        هو اللي كيدير ليها
+        <bdi class="t" dir="ltr">run</bdi>
+        ملي يجي
+        <bdi class="t" dir="ltr">request</bdi>.
+        نتي ما كتكتبش
+        <bdi class="t" dir="ltr">node</bdi>
+        على كل
+        <bdi class="t" dir="ltr">route</bdi>.
+        اليوم حيدنا الـ
+        <bdi class="t" dir="ltr">framework</bdi>
+        باش تشوفي الحركة وحدها.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">9</p>
+      <h2>🌍 <bdi class="t" dir="ltr">examples</bdi> واقعية</h2>
+
+      <article class="card">
+        <h3>1. تجربة سريعة بلا ما تحلّي <bdi class="t" dir="ltr">app</bdi></h3>
+        <p>
+          بغيتي تعرفي واش جمع جوج أرقام صحيح، قبل ما تدخليهم فـ
+          <bdi class="t" dir="ltr">component</bdi>.
+          كتكتبيهم فـ
+          <bdi class="t" dir="ltr">file</bdi>،
+          كتكتبي
+          <bdi class="t" dir="ltr">node</bdi>،
+          وكتشوفي الـ
+          <bdi class="t" dir="ltr">print</bdi>.
+          أسرع من ما تحلّي
+          <bdi class="t" dir="ltr">browser</bdi>.
+        </p>
+      </article>
+      <article class="card">
+        <h3>2. الـ <bdi class="t" dir="ltr">file</bdi> غلط، والـ <bdi class="t" dir="ltr">command</bdi> صحيحة</h3>
+        <p>
+          كتبتي
+          <bdi class="t" dir="ltr">node hello.js</bdi>
+          وطلع
+          <bdi class="t" dir="ltr">error</bdi>.
+          مرّة
+          <bdi class="t" dir="ltr">because</bdi>
+          الـ
+          <bdi class="t" dir="ltr">folder</bdi>
+          ماشي
+          <bdi class="t" dir="ltr">same</bdi>.
+          مرّة
+          <bdi class="t" dir="ltr">because</bdi>
+          السمية
+          <bdi class="t" dir="ltr">Hello.js</bdi>
+          والـ
+          <bdi class="t" dir="ltr">file</bdi>
+          سميتو
+          <bdi class="t" dir="ltr">hello.js</bdi>.
+          على بزاف ديال السيرفرات هاد الفرق كيجيب
+          <bdi class="t" dir="ltr">error</bdi>.
+          على Mac القرص غالباً ما كيفيّقش الحرف الكبير،
+          ولكن ما تعتمديش على هادشي.
+          كتبي السمية كيف ما هي.
+        </p>
+      </article>
+      <article class="card">
+        <h3>3. القياس اللي غادي يجي</h3>
+        <p>
+          من بعد،
+          <bdi class="t" dir="ltr">file</bdi>
+          سميتو
+          <bdi class="t" dir="ltr">eval.js</bdi>
+          غادي يعيّط للـ
+          <bdi class="t" dir="ltr">model</bdi>
+          ويدير
+          <bdi class="t" dir="ltr">print</bdi>
+          لرقم.
+          الحركة ديالك تبقى:
+          <bdi class="t" dir="ltr">terminal</bdi>،
+          <bdi class="t" dir="ltr">same folder</bdi>،
+          <bdi class="t" dir="ltr">node eval.js</bdi>.
+          اللي غادي يتبدّل هو داخل الـ
+          <bdi class="t" dir="ltr">file</bdi>،
+          ماشي طريقة الـ
+          <bdi class="t" dir="ltr">run</bdi>.
+        </p>
+      </article>
+    </section>
+
+    <section class="section">
+      <p class="num">10</p>
+      <h2>🧪 تمارين</h2>
+
+      <p><span class="lvl">🟢 ساهل</span></p>
+      <p>شنو الترتيب ديال الـ <bdi class="t" dir="ltr">print</bdi>؟ كتبي ثلاثة سطور.</p>
+      <pre dir="ltr" class="code-block"><code>console.log(<span class="s">"top"</span>);
+console.log(<span class="s">"then"</span>);
+console.log(<span class="s">"stop"</span>);</code></pre>
+      <details class="solution">
+        <summary>بعد ما تجاوبي، فتحي</summary>
+        <pre class="term" dir="ltr"><span class="out">top</span>
+<span class="out">then</span>
+<span class="out">stop</span></pre>
+        <p>
+          <bdi class="t" dir="ltr">because</bdi>
+          الـ
+          <bdi class="t" dir="ltr">start</bdi>
+          من الـ
+          <bdi class="t" dir="ltr">top</bdi>.
+        </p>
+      </details>
+
+      <p><span class="lvl">🟢 ساهل</span></p>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">file</bdi>
+        <bdi class="t" dir="ltr">hello.js</bdi>
+        كاين فـ
+        <bdi class="t" dir="ltr">folder</bdi>
+        سميتها
+        <bdi class="t" dir="ltr">course</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">terminal</bdi>
+        واقف فـ
+        <bdi class="t" dir="ltr">Desktop</bdi>.
+        كتبتِ
+        <bdi class="t" dir="ltr">node hello.js</bdi>.
+        شنو يوقع؟
+      </p>
+      <details class="solution">
+        <summary>بعد ما تجاوبي، فتحي</summary>
+        <p>
+          <bdi class="t" dir="ltr">error</bdi>.
+          <bdi class="t" dir="ltr">Cannot find module</bdi>.
+          <bdi class="t" dir="ltr">because</bdi>
+          ماشي
+          <bdi class="t" dir="ltr">same folder</bdi>.
+          <bdi class="t" dir="ltr">first</bdi>
+          كتدخلي بـ
+          <bdi class="t" dir="ltr">cd course</bdi>،
+          <bdi class="t" dir="ltr">then</bdi>
+          <bdi class="t" dir="ltr">node hello.js</bdi>.
+        </p>
+      </details>
+    </section>
+
+    <section class="section">
+      <p class="num">11</p>
+      <h2>❓ Quiz</h2>
+      <div
+        class="quiz"
+        data-quiz
+        data-answer="a"
+        data-ok="صحيح. command كتدير run، والـ print كيخرج فـ terminal."
+        data-bad="عاودي شوفي الرسم. الـ file ما كيتفتحش كـ page."
+      >
+        <p>شنو كيدير <bdi class="t" dir="ltr">node hello.js</bdi>؟</p>
+        <div class="opts">
+          <button type="button" data-opt="a"><bdi class="t" dir="ltr">run</bdi> للـ <bdi class="t" dir="ltr">file</bdi>، <bdi class="t" dir="ltr">print</bdi> فـ <bdi class="t" dir="ltr">terminal</bdi></button>
+          <button type="button" data-opt="b"><bdi class="t" dir="ltr">start</bdi> ديال <bdi class="t" dir="ltr">page</bdi>، <bdi class="t" dir="ltr">print</bdi> فـ <bdi class="t" dir="ltr">browser</bdi></button>
+          <button type="button" data-opt="c"><bdi class="t" dir="ltr">stop</bdi> ديال <bdi class="t" dir="ltr">file</bdi>، <bdi class="t" dir="ltr">error</bdi> فـ <bdi class="t" dir="ltr">folder</bdi></button>
+        </div>
+        <p class="fb" data-fb></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">12</p>
+      <h2>🛠️ تحدي</h2>
+      <p><span class="lvl">🟡 متوسط</span></p>
+      <p>
+        عندك
+        <bdi class="t" dir="ltr">file</bdi>
+        سميتو
+        <bdi class="t" dir="ltr">check.js</bdi>
+        فيه
+        <bdi class="t" dir="ltr">document.querySelector("#app")</bdi>.
+        كتبتي
+        <bdi class="t" dir="ltr">node check.js</bdi>
+        وأنتِ فـ
+        <bdi class="t" dir="ltr">same folder</bdi>.
+        شنو غادي يبان: <bdi class="t" dir="ltr">page</bdi>، ولا <bdi class="t" dir="ltr">error</bdi>؟
+        علاش؟ وفين؟
+      </p>
+      <details class="solution">
+        <summary>بعد ما تجاوبي، فتحي</summary>
+        <p>
+          <bdi class="t" dir="ltr">error</bdi>
+          فـ
+          <bdi class="t" dir="ltr">terminal</bdi>:
+          <bdi class="t" dir="ltr">document is not defined</bdi>.
+          الـ
+          <bdi class="t" dir="ltr">folder</bdi>
+          صحيحة،
+          <bdi class="t" dir="ltr">because</bdi>
+          الـ
+          <bdi class="t" dir="ltr">command</bdi>
+          لقات الـ
+          <bdi class="t" dir="ltr">file</bdi>.
+          اللي طايح هو الـ
+          <bdi class="t" dir="ltr">code</bdi>:
+          كيسوّل على
+          <bdi class="t" dir="ltr">page</bdi>
+          و
+          <bdi class="t" dir="ltr">Node</bdi>
+          ما عندوش.
+          <bdi class="t" dir="ltr">then</bdi>
+          كيدير
+          <bdi class="t" dir="ltr">stop</bdi>.
+        </p>
+      </details>
+    </section>
+
+    <section class="section">
+      <p class="num">13</p>
+      <h2>⚠️ أغلاط شائعة</h2>
+      <ul>
+        <li>
+          «كتبت
+          <bdi class="t" dir="ltr">hello.js</bdi>
+          بلا
+          <bdi class="t" dir="ltr">node</bdi>
+          قدامها.»
+          الـ
+          <bdi class="t" dir="ltr">terminal</bdi>
+          ما كيعرفش يشغّل
+          <bdi class="t" dir="ltr">JavaScript</bdi>
+          بوحدو.
+          <bdi class="t" dir="ltr">first</bdi>
+          الكلمة
+          <bdi class="t" dir="ltr">node</bdi>.
+        </li>
+        <li>
+          «الـ
+          <bdi class="t" dir="ltr">print</bdi>
+          ما بانش فـ
+          <bdi class="t" dir="ltr">browser</bdi>
+          إذن الـ
+          <bdi class="t" dir="ltr">file</bdi>
+          ما خدمش.»
+          شوفي الـ
+          <bdi class="t" dir="ltr">terminal</bdi>.
+          هو البلاصة.
+        </li>
+        <li>
+          «
+          <bdi class="t" dir="ltr">node</bdi>
+          بوحدها كتفتح المشروع.»
+          بلا اسم
+          <bdi class="t" dir="ltr">file</bdi>،
+          ما كاينش
+          <bdi class="t" dir="ltr">run</bdi>
+          ديال الكود ديالك.
+        </li>
+        <li>
+          «
+          <bdi class="t" dir="ltr">error</bdi>
+          يعني
+          <bdi class="t" dir="ltr">Node</bdi>
+          ما متبّتش.»
+          بزاف ديال المرات الـ
+          <bdi class="t" dir="ltr">folder</bdi>
+          ماشي
+          <bdi class="t" dir="ltr">same</bdi>،
+          ولا السمية غلط.
+        </li>
+        <li>
+          «نقدر نستعمل
+          <bdi class="t" dir="ltr">document</bdi>
+          حيت
+          <bdi class="t" dir="ltr">JavaScript</bdi>
+          هي
+          <bdi class="t" dir="ltr">same</bdi>.»
+          الـ
+          <bdi class="t" dir="ltr">language</bdi>
+          <bdi class="t" dir="ltr">same</bdi>.
+          الـ
+          <bdi class="t" dir="ltr">page</bdi>
+          ما كاينااش.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p class="num">14</p>
+      <h2>🔄 Recap</h2>
+      <p>
+        فالدرس 1، الحلقة كانت
+        <bdi class="t" dir="ltr">Build</bdi>
+        ثم
+        <bdi class="t" dir="ltr">Measure</bdi>
+        ثم
+        <bdi class="t" dir="ltr">Improve</bdi>.
+        <bdi class="t" dir="ltr">Measure</bdi>
+        من بعد غادي تكون
+        <bdi class="t" dir="ltr">file</bdi>
+        كتكتبي ليها
+        <bdi class="t" dir="ltr">node</bdi>.
+      </p>
+      <p>
+        فالدرس 2،
+        <bdi class="t" dir="ltr">Node</bdi>
+        ماشي
+        <bdi class="t" dir="ltr">language</bdi>.
+        اليوم شفنا كيفاش كيدخل للخدمة:
+        <bdi class="t" dir="ltr">command</bdi>
+        فـ
+        <bdi class="t" dir="ltr">terminal</bdi>.
+      </p>
+      <div class="flow">
+        <div class="box be"><bdi class="t" dir="ltr">terminal</bdi> فـ <bdi class="t" dir="ltr">same folder</bdi></div>
+        <div class="arrow">↓</div>
+        <div class="box da" dir="ltr">node hello.js</div>
+        <div class="arrow">↓</div>
+        <div class="box be"><bdi class="t" dir="ltr">start</bdi> من <bdi class="t" dir="ltr">top</bdi></div>
+        <div class="arrow">↓</div>
+        <div class="box da">print</div>
+        <div class="arrow">↓</div>
+        <div class="box be">stop</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">15</p>
+      <h2>🎯 شنو تتذكّري</h2>
+      <div class="ok">
+        <ol>
+          <li><bdi class="t" dir="ltr">node hello.js</bdi> كتدير <bdi class="t" dir="ltr">run</bdi> لـ <bdi class="t" dir="ltr">file</bdi>.</li>
+          <li>كيبدا من الـ <bdi class="t" dir="ltr">top</bdi>. الـ <bdi class="t" dir="ltr">print</bdi> كيخرج فـ <bdi class="t" dir="ltr">terminal</bdi>. <bdi class="t" dir="ltr">then</bdi> كيدير <bdi class="t" dir="ltr">stop</bdi>.</li>
+          <li>خاص <bdi class="t" dir="ltr">same folder</bdi>. إلا لا، <bdi class="t" dir="ltr">error</bdi>.</li>
+          <li>الجاي: شنو كيدير <bdi class="t" dir="ltr">npm</bdi>، بحال اللي كتعرفيه من الـ <bdi class="t" dir="ltr">project</bdi>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">16</p>
+      <h2>🇬🇧 كلمات <bdi class="t" dir="ltr">English</bdi> ديال هاد الدرس</h2>
+      <p>
+        15 كلمة جديدة.
+        رجعي ليهم فـ
+        <a href="../ENGLISH.md"><bdi class="t" dir="ltr">ENGLISH.md</bdi></a>.
+        المرة الجاية غادي نزيدو دفعة صغيرة أخرى، ماشي هادو كاملين من جديد.
+      </p>
+      <div class="words">
+        <article>
+          <h3><bdi class="t" dir="ltr">run</bdi></h3>
+          <p>شغّل. <bdi class="t" dir="ltr">node</bdi> كيدير run لـ file.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">start</bdi></h3>
+          <p>بدا. الـ file كيبدا من الـ top.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">stop</bdi></h3>
+          <p>وقف. ملي يسالي، كيدير stop.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">terminal</bdi></h3>
+          <p>النافذة اللي كتكتبي فيها الأمر.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">command</bdi></h3>
+          <p>الأمر. <bdi class="t" dir="ltr">node hello.js</bdi> هي command.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">folder</bdi></h3>
+          <p>البلاصة اللي فيها files.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">same</bdi></h3>
+          <p>نفس. same folder يعني نفس البلاصة.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">cd</bdi></h3>
+          <p>دخلي لـ folder. ثم كتكتبي node.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">print</bdi></h3>
+          <p>خرج النص. console.log كيدير print.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">error</bdi></h3>
+          <p>غلط كيوقف. file ما كاينش، ولا document.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">first</bdi></h3>
+          <p>اللول. السطر اللول، ولا الكلمة اللولة.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">then</bdi></h3>
+          <p>من بعد. first ثم then.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">because</bdi></h3>
+          <p>حيت. error because ماشي same folder.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">top</bdi></h3>
+          <p>الفوق. run كيبدا من الـ top.</p>
+        </article>
+        <article>
+          <h3><bdi class="t" dir="ltr">Enter</bdi></h3>
+          <p>الزر اللي كيسالي الـ command ويبدّا الـ run.</p>
+        </article>
+      </div>
+      <p>
+        كلمة من الـ
+        <bdi class="t" dir="ltr">docs</bdi>:
+        كيسمّيو الـ
+        <bdi class="t" dir="ltr">file</bdi>
+        اللي كيتشغّل
+        <bdi class="t" dir="ltr">script</bdi>.
+        عندنا بقات
+        <bdi class="t" dir="ltr">file</bdi>
+        باش ما نكثروش المصطلحات.
+        <bdi class="t" dir="ltr">script</bdi>
+        = هاد الـ
+        <bdi class="t" dir="ltr">file</bdi>.
+      </p>
+    </section>
+
+    <aside class="teacher">
+      <p>
+        إلا
+        <bdi class="t" dir="ltr">command</bdi>
+        خرجات
+        <bdi class="t" dir="ltr">error</bdi>
+        وما عرفتيش قرايها،
+        صوّري السطر اللول ديال الـ
+        <bdi class="t" dir="ltr">error</bdi>
+        هنا.
+        نشرحوه بكلمات هاد الدرس.
+      </p>
+      <p class="source">
+        المصدر:
+        <a href="https://nodejs.org/learn/command-line/run-nodejs-scripts-from-the-command-line" dir="ltr">nodejs.org — Run Node.js scripts from the command line</a>
+      </p>
+      <p>
+        ورقة قصيرة:
+        <a href="../reference/run-a-file.html">run a file</a>
+        ·
+        <a href="0003-nodejs-vs-browser.html">الدرس اللي قبل</a>
+        ·
+        <a href="../index.html">الخريطة</a>
+        ·
+        <a href="../ENGLISH.md">English</a>
+      </p>
+    </aside>
+  </div>
+  <script src="../assets/course.js"></script>
+</body>
+</html>

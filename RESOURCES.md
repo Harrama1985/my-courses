@@ -10,6 +10,8 @@
   مبادئ الـ agent: tools، context، evals، control flow. Use for: الدرس 1 ومن بعد المعمارية.
 - [Introduction to Node.js](https://nodejs.org/learn/getting-started/introduction-to-nodejs)
   Node هو runtime: نفس JS، خارج browser. Use for: درس Node مقابل browser.
+- [Run Node.js scripts from the command line](https://nodejs.org/learn/command-line/run-nodejs-scripts-from-the-command-line)
+  `node app.js` من نفس الـ folder. Use for: درس run a file. ما نشرحوش shebang ولا `node --run` فهاد الدرس.
 - [Node.js About](https://nodejs.org/en/about)
   event loop و I/O غير حاجز. Use for: علاش Node مناسب لـ APIs و streaming.
 - [Cloudflare Agents](https://developers.cloudflare.com/agents/)

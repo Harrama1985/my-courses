@@ -23,6 +23,13 @@ https://github.com/Hendrixer/ai-engineering-fundamentals
 فصل Node.js زيدناه حنا، قبل Cloudflare، حيت الـ server ديالها Node.
 Cloudflare Workers ماشي نفس Node. الفرق يتشرح ملي نوصلو للـ agent.
 
+## English بشوية
+
+الدارجة للجملة. كل درس كيزيد دفعة صغيرة ديال كلمات English، زيادة على المصطلح التقني.
+اللائحة والمعاني فـ `ENGLISH.md`. ما نكتبوش فقرة إنجليزية.
+
+الدفعة ديال الدرس 3: `run` `start` `stop` `terminal` `command` `folder` `same` `cd` `print` `error` `first` `then` `because` `top` `Enter`.
+
 ## القاعدة ديال الكلمات
 
 الدارجة للجملة. الكلمة التقنية بالإنجليزية داخل:
@@ -96,6 +103,9 @@ Cloudflare Workers ماشي نفس Node. الفرق يتشرح ملي نوصلو
 - `index.html` — خريطة 12 درس ديال الريبو + فصل Node
 - `lessons/0002-build-measure-improve.html` — lesson 1، تعاود بالتفصيل
 - `lessons/0003-nodejs-vs-browser.html` — lesson 2: Node runtime، ماشي language جديدة
+- `lessons/0004-run-a-node-file.html` — الدرس 3: `node file.js` من الـ terminal، same folder، print ثم stop
+- `reference/run-a-file.html` — ورقة قصيرة ديال نفس الفكرة
+- `ENGLISH.md` — كلمات English ديال كل درس
 - `assets/course.css` و `assets/course.js`
 - `NOTES.md` ، `RESOURCES.md` ، `MISSION.md`
 
@@ -103,5 +113,6 @@ Cloudflare Workers ماشي نفس Node. الفرق يتشرح ملي نوصلو
 
 ## الجاي
 
-lesson الجاي يبقى فـ Node (ملفات، npm، HTTP، env) قبل ما ندخلو لتفاصيل Cloudflare Agent.
-ما نعاودوش «شنو هو AI Engineer» إلا بان سوء فهم.
+الدرس الجاي: `npm`. مفهوم واحد. شنو كيدير فالـ project، بحال اللي كتعرفيه من Next.js. من بعد HTTP، من بعد env. Cloudflare Agent من بعد هاد الثلاثة.
+ما نعاودوش «شنو هو AI Engineer» ولا «Node ماشي language» إلا بان سوء فهم.
+كل درس كيزيد دفعة English صغيرة، وكتتسجّل فـ `ENGLISH.md`.
