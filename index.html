@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الخريطة — AI Engineering Fundamentals</title>
+  <link rel="stylesheet" href="assets/course.css">
+</head>
+<body data-root="." data-page="roadmap">
+  <div class="wrap">
+    <nav class="site-nav" data-nav></nav>
+
+    <p class="kicker">AI Engineering Fundamentals · Node.js + TypeScript + Cloudflare</p>
+    <h1>تبني، تقيسي، وتحسّني أنظمة AI</h1>
+    <p class="lede">
+      هاد الـ <bdi class="t" dir="ltr">course</bdi> ماشي «كيفاش تسولي الـ <bdi class="t" dir="ltr">chat</bdi>».
+      هو كيفاش تزيدي
+      <bdi class="t" dir="ltr">agentic chat</bdi>
+      لـ <bdi class="t" dir="ltr">app</bdi> كتعرفيه أصلاً،
+      من بعد تقيسي الـ <bdi class="t" dir="ltr">model</bdi> برقم،
+      ومن بعد تحسّنيه بشوية بشوية.
+    </p>
+
+    <div class="legend">
+      <span class="chip fe"><i></i> Frontend</span>
+      <span class="chip be"><i></i> Node.js / Agent</span>
+      <span class="chip db"><i></i> SQLite / Vector DB</span>
+      <span class="chip md"><i></i> AI Model</span>
+      <span class="chip ex"><i></i> Tools / APIs</span>
+      <span class="chip da"><i></i> داتا خاصة</span>
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <h3>شنو كتعرفي</h3>
+        <p>
+          <bdi class="t" dir="ltr">React</bdi>،
+          <bdi class="t" dir="ltr">TypeScript</bdi>،
+          <bdi class="t" dir="ltr">Next.js</bdi>،
+          <bdi class="t" dir="ltr">REST</bdi>.
+          هادشي هو الباب. الـ <bdi class="t" dir="ltr">server</bdi> غادي يكون
+          <bdi class="t" dir="ltr">Node.js</bdi>،
+          ماشي
+          <bdi class="t" dir="ltr">Python</bdi>.
+          عندك خلفية عليه؛ غادي نعمّرو الثغرات.
+        </p>
+      </article>
+      <article class="card">
+        <h3>شنو غادي تكوني قادرة ديري</h3>
+        <p>
+          تبني
+          <bdi class="t" dir="ltr">agent</bdi>
+          بـ
+          <bdi class="t" dir="ltr">Node.js</bdi>
+          وتسيّريه حتى على
+          <bdi class="t" dir="ltr">Cloudflare</bdi>،
+          تربطيه بـ <bdi class="t" dir="ltr">UI</bdi> ديال <bdi class="t" dir="ltr">chat</bdi>،
+          تقيّسيه بـ
+          <bdi class="t" dir="ltr">evals</bdi>،
+          وتعطيه داتا خاصة بـ
+          <bdi class="t" dir="ltr">RAG</bdi>.
+        </p>
+      </article>
+    </div>
+
+    <h2>الحلقة اللي غادي تتعاود الـ <bdi class="t" dir="ltr">course</bdi> كامل</h2>
+    <div class="flow">
+      <div class="box fe">1. BUILD — زيدي الـ agent للـ app</div>
+      <div class="arrow">↓</div>
+      <div class="box da">2. MEASURE — eval harness كيسجّل</div>
+      <div class="arrow">↓</div>
+      <div class="box be">3. IMPROVE — تبدّلي حاجة وحدة</div>
+      <div class="arrow">↓</div>
+      <div class="box md">عاودي MEASURE</div>
+    </div>
+    <p>إلا ما قيستيش، راك غير كتخمني. إلا بدّلتي بزاف دالحوايج دفعة وحدة، ما عرفتيش شنو نفع.</p>
+
+    <h2>كيفاش كيبان الـ <bdi class="t" dir="ltr">app</bdi> فالأخر</h2>
+    <p>
+      نفس الـ <bdi class="t" dir="ltr">repo</bdi>:
+      <bdi class="t" dir="ltr">canvas</bdi>
+      ديال
+      <bdi class="t" dir="ltr">Excalidraw</bdi>
+      و
+      <bdi class="t" dir="ltr">chat</bdi>.
+      الـ
+      <bdi class="t" dir="ltr">model</bdi>
+      ما كيرسمش
+      <bdi class="t" dir="ltr">image</bdi>.
+      كيرجّع
+      <bdi class="t" dir="ltr">elements</bdi>،
+      والـ
+      <bdi class="t" dir="ltr">canvas</bdi>
+      كيرسمهم.
+    </p>
+    <div class="screen" aria-label="canvas بجنب chat">
+      <div class="pane">
+        <h3><bdi class="t" dir="ltr">canvas</bdi></h3>
+        <span class="shape fe" dir="ltr">User → App → Provider</span>
+      </div>
+      <div class="pane">
+        <h3><bdi class="t" dir="ltr">chat</bdi></h3>
+        <div class="msg" dir="ltr">draw an OAuth sequence</div>
+        <div class="msg" dir="ltr">3 rectangles + 2 arrows</div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="box fe">React chat</div>
+      <div class="arrow">↓</div>
+      <div class="box be">Agent</div>
+      <div class="arrow">↓</div>
+      <div class="box md">LLM</div>
+      <div class="arrow">↓</div>
+      <div class="box ex" dir="ltr">tool: add elements</div>
+      <div class="arrow">↓</div>
+      <div class="box fe" dir="ltr">elements على canvas</div>
+    </div>
+
+    <h2>12 <bdi class="t" dir="ltr">lessons</bdi> من الـ <bdi class="t" dir="ltr">repo</bdi> + Node</h2>
+    <p>
+      الترتيب من
+      <a href="https://github.com/Hendrixer/ai-engineering-fundamentals" dir="ltr">Hendrixer/ai-engineering-fundamentals</a>.
+      فصل
+      <bdi class="t" dir="ltr">Node.js</bdi>
+      زاديناه ليك نتي، قبل ما ندخلو لـ
+      <bdi class="t" dir="ltr">Cloudflare</bdi>.
+    </p>
+
+    <h2>النهار 1 — تبني وتقيسي</h2>
+    <div class="phases">
+      <section class="phase">
+        <header>
+          <h2>1. شنو هو AI Engineer</h2>
+          <span class="meta"><a href="lessons/0002-build-measure-improve.html">lesson جاهز</a></span>
+        </header>
+        <p>الـ <bdi class="t" dir="ltr">model</bdi> محرّك جاهز. نتي كتركّبي حولو <bdi class="t" dir="ltr">canvas</bdi> و <bdi class="t" dir="ltr">chat</bdi>، وتقيسي قبل ما تبدّلي.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>Node.js للفرونت</h2>
+          <span class="meta"><a href="lessons/0003-nodejs-vs-browser.html">lesson جاهز</a></span>
+        </header>
+        <p>نفس <bdi class="t" dir="ltr">JavaScript</bdi>، برا الـ <bdi class="t" dir="ltr">browser</bdi>. هاد الفصل زيدناه حنا، ماشي فترتيب الـ <bdi class="t" dir="ltr">repo</bdi>، حيت الـ <bdi class="t" dir="ltr">server</bdi> ديالك <bdi class="t" dir="ltr">Node</bdi>.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>2. أول Cloudflare Agent</h2>
+          <span class="meta">من بعد</span>
+        </header>
+        <p>الـ agent كيستقبل الـ <bdi class="t" dir="ltr">message</bdi>، كيختار <bdi class="t" dir="ltr">tool</bdi>، وكيرجّع <bdi class="t" dir="ltr">elements</bdi>. أول <bdi class="t" dir="ltr">rectangle</bdi> كيظهر على الـ <bdi class="t" dir="ltr">canvas</bdi>.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>3. تجربة الـ chat</h2>
+          <span class="meta">React</span>
+        </header>
+        <p>الـ <bdi class="t" dir="ltr">response</bdi> كيوصل <bdi class="t" dir="ltr">chunk</bdi> بـ <bdi class="t" dir="ltr">chunk</bdi>، وكتشوفي «كيرسم…» ملي الـ <bdi class="t" dir="ltr">tool</bdi> خدامة.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>4. انضباط الـ eval</h2>
+          <span class="meta">الـ score</span>
+        </header>
+        <p><bdi class="t" dir="ltr">list</bdi> ديال <bdi class="t" dir="ltr">examples</bdi> ثابتة. كتشغّليهم باليد اللولة، وكتسجّلي <bdi class="t" dir="ltr">baseline score</bdi>.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>5. مصحّحون أوتوماتيك</h2>
+          <span class="meta">الرقم</span>
+        </header>
+        <p><bdi class="t" dir="ltr">code</bdi> كيشوف واش الـ <bdi class="t" dir="ltr">schema</bdi> صحيح، و <bdi class="t" dir="ltr">model</bdi> كيحكم على جودة الـ <bdi class="t" dir="ltr">diagram</bdi>. نفس الـ <bdi class="t" dir="ltr">list</bdi>، كل مرة.</p>
+      </section>
+    </div>
+
+    <h2>النهار 2 — تحسّني حاجة وحدة وتعاودي تقيسي</h2>
+    <div class="phases">
+      <section class="phase">
+        <header>
+          <h2>6. Context engineering</h2>
+          <span class="meta">شنو تعطي للـ model</span>
+        </header>
+        <p>الـ <bdi class="t" dir="ltr">instructions</bdi>، حالة الـ <bdi class="t" dir="ltr">canvas</bdi>، و <bdi class="t" dir="ltr">history</bdi> ديال الـ <bdi class="t" dir="ltr">chat</bdi>. بزاف ديال الـ <bdi class="t" dir="ltr">text</bdi> كيضيّع الـ <bdi class="t" dir="ltr">model</bdi>.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>7. tools أحسن</h2>
+          <span class="meta">الـ model كيدير</span>
+        </header>
+        <p>بدّل <bdi class="t" dir="ltr">element</bdi>، قرا الـ <bdi class="t" dir="ltr">canvas</bdi>، ورّي للـ <bdi class="t" dir="ltr">model</bdi> <bdi class="t" dir="ltr">example</bdi> كيفاش ينادي الـ <bdi class="t" dir="ltr">tool</bdi>.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>8. RAG</h2>
+          <span class="meta">داتا خاصة</span>
+        </header>
+        <p>الـ <bdi class="t" dir="ltr">model</bdi> ما حافظش أنماط الـ <bdi class="t" dir="ltr">diagrams</bdi> ديالك. كتجيب الـ <bdi class="t" dir="ltr">chunk</bdi> القريب وتعطيه ليه.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>9. Gen UI</h2>
+          <span class="meta">ماشي text برك</span>
+        </header>
+        <p>نتيجة الـ <bdi class="t" dir="ltr">tool</bdi> كتولي <bdi class="t" dir="ltr">component</bdi> ديال React: معاينة، ولا كروت تختار منهم.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>10. إنسان فالحلقة</h2>
+          <span class="meta">الثقة</span>
+        </header>
+        <p>قبل الـ <bdi class="t" dir="ltr">delete</bdi> أو الـ <bdi class="t" dir="ltr">change</bdi> الكبير، الـ <bdi class="t" dir="ltr">chat</bdi> كيسول: وافقي ولا لا.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>11. معمارية الـ agent</h2>
+          <span class="meta">ماشي حلقة وحدة</span>
+        </header>
+        <p>يشوف، يخطّط، من بعد يرسم. <bdi class="t" dir="ltr">agent</bdi> صغير ومركّز، ماشي <bdi class="t" dir="ltr">agent</bdi> كيدير كلشي.</p>
+      </section>
+      <section class="phase">
+        <header>
+          <h2>12. Data flywheel</h2>
+          <span class="meta">الاستعمال كيولي test</span>
+        </header>
+        <p>كل Undo هو <bdi class="t" dir="ltr">signal</bdi>. الـ <bdi class="t" dir="ltr">correction</bdi> ديال الـ <bdi class="t" dir="ltr">user</bdi> كيولي <bdi class="t" dir="ltr">example</bdi> جديد فـ eval.</p>
+      </section>
+    </div>
+
+    <h2>شنو غادي يكون عندك فالأخر</h2>
+    <ul>
+      <li><bdi class="t" dir="ltr">app</bdi> فيه <bdi class="t" dir="ltr">chat</bdi> و <bdi class="t" dir="ltr">agent</bdi>، ماشي demo كيتكسّر.</li>
+      <li>طريقة تقيسي بيها: قبل ما تبدّلي، وبعد ما تبدّلي.</li>
+      <li>agent كيستعمل tools وكيقدر يقرا داتا خاصة.</li>
+      <li>كل هادشي بـ <bdi class="t" dir="ltr">Node.js</bdi> + <bdi class="t" dir="ltr">TypeScript</bdi> + <bdi class="t" dir="ltr">React</bdi>. ماشي <bdi class="t" dir="ltr">Python</bdi>.</li>
+    </ul>
+
+    <div class="note">
+      الخريطة من ملاحظات الـ <bdi class="t" dir="ltr">repo</bdi>
+      <a href="https://github.com/Hendrixer/ai-engineering-fundamentals" dir="ltr">ai-engineering-fundamentals</a>.
+      الشرح هنا بالدارجة والرسوم. ما غاديش ننسخو الـ <bdi class="t" dir="ltr">text</bdi> الإنجليزي.
+    </div>
+
+    <div class="teacher">
+        <p><strong>دابا:</strong> <bdi class="t" dir="ltr">lesson</bdi> 1 تعاود. من بعد <bdi class="t" dir="ltr">Node.js</bdi> مقابل <bdi class="t" dir="ltr">browser</bdi>.</p>
+      <p>
+        <a href="lessons/0003-nodejs-vs-browser.html">فتح درس Node.js</a>
+        ·
+        <a href="lessons/0002-build-measure-improve.html">lesson 1: الحلقة</a>
+      </p>
+    </div>
+  </div>
+  <script src="assets/course.js"></script>
+</body>
+</html>

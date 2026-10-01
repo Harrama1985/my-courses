@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lesson 2 — Node.js مقابل الـ browser</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-root=".." data-page="0003">
+  <div class="wrap">
+    <nav class="site-nav" data-nav></nav>
+
+    <p class="kicker">الفصل 2 · Node.js · مفهوم واحد</p>
+    <h1><bdi class="t" dir="ltr">Node.js</bdi> ماشي <bdi class="t" dir="ltr">language</bdi> جديدة</h1>
+    <p class="lede">
+      عندك
+      <bdi class="t" dir="ltr">JavaScript</bdi>
+      و
+      <bdi class="t" dir="ltr">TypeScript</bdi>.
+      وعندك شوية
+      <bdi class="t" dir="ltr">Node</bdi>.
+      اليوم غير فكرة وحدة: نفس الـ <bdi class="t" dir="ltr">language</bdi>، <em>بلاصى أخرى</em>، بـ <bdi class="t" dir="ltr">permissions</bdi> مختلفة.
+    </p>
+
+    <div class="legend">
+      <span class="chip fe"><i></i> Browser</span>
+      <span class="chip be"><i></i> Node.js</span>
+      <span class="chip md"><i></i> نفس JS</span>
+    </div>
+
+    <section class="section">
+      <p class="num">1</p>
+      <h2>🎯 شنو كنتعلمو؟</h2>
+      <p>
+        <bdi class="t" dir="ltr">Node.js</bdi>
+        هو
+        <bdi class="t" dir="ltr">runtime</bdi>:
+        <bdi class="t" dir="ltr">program</bdi>
+        كيجري
+        <bdi class="t" dir="ltr">JavaScript</bdi>
+        على الـ
+        <bdi class="t" dir="ltr">computer</bdi>
+        أو الـ
+        <bdi class="t" dir="ltr">server</bdi>،
+        ماشي داخل Chrome.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">2</p>
+      <h2>🤔 علاش فهاد الـ <bdi class="t" dir="ltr">course</bdi>؟</h2>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">eval harness</bdi>،
+        <bdi class="t" dir="ltr">calls</bdi>
+        ديال الـ
+        <bdi class="t" dir="ltr">LLM</bdi>،
+        وغالباً الـ
+        <bdi class="t" dir="ltr">agent</bdi>
+        غادي يعيشو هنا: فـ
+        <bdi class="t" dir="ltr">Node</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">UI</bdi>
+        تبقى
+        <bdi class="t" dir="ltr">React</bdi>.
+      </p>
+      <p>
+        ما غاديش ندوزو لـ
+        <bdi class="t" dir="ltr">Python</bdi>.
+        نفس الـ
+        <bdi class="t" dir="ltr">language</bdi>
+        اللي كتعرفيها، غير الـ
+        <bdi class="t" dir="ltr">environment</bdi>
+        تبدّلات.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">3</p>
+      <h2>🧠 شرح دارجة</h2>
+      <p>
+        فـ
+        <bdi class="t" dir="ltr">browser</bdi>،
+        <bdi class="t" dir="ltr">JS</bdi>
+        كيشوف الـ
+        <bdi class="t" dir="ltr">page</bdi>:
+        <bdi class="t" dir="ltr">document</bdi>،
+        <bdi class="t" dir="ltr">window</bdi>،
+        الـ
+        <bdi class="t" dir="ltr">buttons</bdi>.
+        ما يقدرش يقرا
+        <bdi class="t" dir="ltr">file</bdi>
+        من الـ
+        <bdi class="t" dir="ltr">disk</bdi>
+        بسهولة، وما يقدرش يفتح
+        <bdi class="t" dir="ltr">port</bdi>
+        3000.
+      </p>
+      <p>
+        فـ
+        <bdi class="t" dir="ltr">Node</bdi>،
+        ما كاينش
+        <bdi class="t" dir="ltr">page</bdi>.
+        كاين:
+        <bdi class="t" dir="ltr">files</bdi>،
+        <bdi class="t" dir="ltr">network</bdi>،
+        <bdi class="t" dir="ltr">environment variables</bdi>،
+        <bdi class="t" dir="ltr">npm</bdi>.
+        ما كاينش
+        <bdi class="t" dir="ltr">document.getElementById</bdi>.
+      </p>
+      <p>
+        المصدر الرسمي:
+        Node كيجري محرّك
+        <bdi class="t" dir="ltr">V8</bdi>
+        (نفس قلب Chrome) برا الـ
+        <bdi class="t" dir="ltr">browser</bdi>.
+        <a href="https://nodejs.org/learn/getting-started/introduction-to-nodejs" dir="ltr">Introduction to Node.js</a>
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">4</p>
+      <h2>🌍 تشبيه</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>JS فـ <bdi class="t" dir="ltr">browser</bdi></h3>
+          <p>بحال طبّاخ فالقاعة: كيشوف الزبناء والطاولات. ما يدخلش للمخزن ديال العمارة.</p>
+        </article>
+        <article class="card">
+          <h3>JS فـ Node</h3>
+          <p>بحال طبّاخ فالمطبخ: ما كيشوفش القاعة، ولكن كيوصل للفرن، الثلاجة، وباب الزنقة (الـ <bdi class="t" dir="ltr">network</bdi>).</p>
+        </article>
+      </div>
+      <p>نفس المهنة (الطبخ = JavaScript). البلاصة هي اللي كتبدّل الـ <bdi class="t" dir="ltr">APIs</bdi>.</p>
+    </section>
+
+    <section class="section">
+      <p class="num">5</p>
+      <h2>🎨 الرسم</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>Browser</strong></p>
+          <div class="flow">
+            <div class="box fe">JS + TypeScript</div>
+            <div class="arrow">↓</div>
+            <div class="box fe">DOM / window / fetch</div>
+            <div class="arrow">↓</div>
+            <div class="box fe">React UI</div>
+          </div>
+        </div>
+        <div>
+          <p><strong>Node.js</strong></p>
+          <div class="flow">
+            <div class="box md">نفس JS + TypeScript</div>
+            <div class="arrow">↓</div>
+            <div class="box be">fs / http / process.env</div>
+            <div class="arrow">↓</div>
+            <div class="box be">API · evals · agent</div>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <bdi class="t" dir="ltr">Cloudflare Workers</bdi>
+        قريب من هاد الفكرة (JS برا الـ <bdi class="t" dir="ltr">browser</bdi>) ولكن ماشي نفس
+        <bdi class="t" dir="ltr">Node</bdi>.
+        غادي نقارنوه ملي نوصلو لفصل الـ agent. اليوم غير Node.
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">6</p>
+      <h2>🔍 الخطوات فدماغك</h2>
+      <ol>
+        <li>كتبي <bdi class="t" dir="ltr">file</bdi> <bdi class="t" dir="ltr">.ts</bdi> أو <bdi class="t" dir="ltr">.js</bdi>.</li>
+        <li>ما كتحطّيهش فـ <bdi class="t" dir="ltr">page</bdi>. كتشغّليه بـ <bdi class="t" dir="ltr">node fichier.js</bdi>.</li>
+        <li>V8 كيقرا الـ <bdi class="t" dir="ltr">code</bdi>.</li>
+        <li>إلا لقيتي <bdi class="t" dir="ltr">document</bdi> → غادي يطيح. ما كاينش.</li>
+        <li>إلا لقيتي قراءة <bdi class="t" dir="ltr">file</bdi> أو <bdi class="t" dir="ltr">HTTP server</bdi> → هادشي مسموح هنا.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <p class="num">7</p>
+      <h2>💻 <bdi class="t" dir="ltr">code</bdi> صغير</h2>
+      <p>الـ <bdi class="t" dir="ltr">block</bdi> الأولى: اللي كتعرفيه فالـ <bdi class="t" dir="ltr">UI</bdi>. الثانية: نفس الفكرة فـ Node. ما تشغّلي والو دابا إلا ما بغيتيش.</p>
+      <pre dir="ltr" class="code-block"><code><span class="c">// Browser — كتعرفيه</span>
+<span class="k">const</span> el = document.querySelector(<span class="s">"#app"</span>);
+el.textContent = <span class="s">"سلام"</span>;</code></pre>
+      <pre dir="ltr" class="code-block"><code><span class="c">// Node — ما كاينش document</span>
+<span class="k">const</span> name = process.env.APP_NAME ?? <span class="s">"agent"</span>;
+console.log(<span class="s">"سلام من server:"</span>, name);
+
+<span class="c">// من بعد نقدروا نفتحو server، نقراو file، ونعيطو لـ LLM</span></code></pre>
+      <p>
+        <bdi class="t" dir="ltr">console.log</bdi>
+        كاين فالجوج. 
+        <bdi class="t" dir="ltr">document</bdi>
+        غير فـ
+        <bdi class="t" dir="ltr">browser</bdi>.
+        <bdi class="t" dir="ltr">process.env</bdi>
+        غير فـ Node (أو <bdi class="t" dir="ltr">server</bdi>).
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">8</p>
+      <h2>⚛️ مقارنة مع <bdi class="t" dir="ltr">Next.js</bdi></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>اللي كتعرفيه</th>
+            <th>شنو هو أصلاً</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>component فـ React</td>
+            <td>كيتحسب غالباً فـ <bdi class="t" dir="ltr">browser</bdi> (أو SSR)، كيلمس UI</td>
+          </tr>
+          <tr>
+            <td>API route / server action</td>
+            <td><bdi class="t" dir="ltr">server code</bdi>. قريب من Node، داخل <bdi class="t" dir="ltr">framework</bdi> ديال Next</td>
+          </tr>
+          <tr>
+            <td><bdi class="t" dir="ltr">file</bdi> Node وحدو</td>
+            <td>نفس فكرة الـ route، بلا <bdi class="t" dir="ltr">framework</bdi>. نتي المسؤولة على الـ <bdi class="t" dir="ltr">server</bdi></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        ملي كتبتي
+        <bdi class="t" dir="ltr">app/api/...</bdi>
+        فـ Next، راك أصلاً لمستي عالم Node.
+        هاد الـ <bdi class="t" dir="ltr">lesson</bdi> غير كيسمّي البلاصة: هاد الـ <bdi class="t" dir="ltr">code</bdi> ماشي ديال الـ <bdi class="t" dir="ltr">page</bdi>.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">9</p>
+      <h2>🌍 <bdi class="t" dir="ltr">example</bdi> واقعي</h2>
+      <p>
+        فـ <bdi class="t" dir="ltr">course</bdi> ديالنا: الـ <bdi class="t" dir="ltr">user</bdi> كتكب فـ
+        <bdi class="t" dir="ltr">React</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">message</bdi>
+        ما خصّهاش تبقى غير فـ
+        <bdi class="t" dir="ltr">browser</bdi>.
+        خصها تمشي لـ
+        <bdi class="t" dir="ltr">server</bdi>
+        ديال
+        <bdi class="t" dir="ltr">Node</bdi>
+        (أو Worker من بعد)، هو اللي ينادي الـ
+        <bdi class="t" dir="ltr">model</bdi>،
+        يشغّل tools، ويكتب نتيجة الـ eval فـ
+        <bdi class="t" dir="ltr">file</bdi>
+        أو
+        <bdi class="t" dir="ltr">database</bdi>.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">10</p>
+      <h2>🧪 تمرين</h2>
+      <p><span class="lvl">🟢 ساهل</span></p>
+      <p>كتبي <bdi class="t" dir="ltr">sentence</bdi> واحدة: واش هاد الـ <bdi class="t" dir="ltr">line</bdi> يخدم فـ <bdi class="t" dir="ltr">browser</bdi>، فـ Node، ولا فالجوج؟ علاش؟</p>
+      <pre dir="ltr" class="code-block"><code>document.body.style.background = "white";</code></pre>
+      <details class="solution">
+        <summary>بعد ما تجاوبي، فتحي</summary>
+        <p>غير فـ <bdi class="t" dir="ltr">browser</bdi>. <bdi class="t" dir="ltr">document</bdi> هو الـ <bdi class="t" dir="ltr">page</bdi>. Node ما عندوش <bdi class="t" dir="ltr">page</bdi>.</p>
+      </details>
+    </section>
+
+    <section class="section">
+      <p class="num">11</p>
+      <h2>❓ Quiz</h2>
+      <div
+        class="quiz"
+        data-quiz
+        data-answer="b"
+        data-ok="صحيح. Node هو بلاصة كتجري فيها نفس JS، بـ permissions ديال server."
+        data-bad="فكّري: واش Node language، ولا runtime؟"
+      >
+        <p>شنو هو <bdi class="t" dir="ltr">Node.js</bdi>؟</p>
+        <div class="opts">
+          <button type="button" data-opt="a"><bdi class="t" dir="ltr">language</bdi> جديدة غير JavaScript</button>
+          <button type="button" data-opt="b"><bdi class="t" dir="ltr">runtime</bdi> كيجري JavaScript برا <bdi class="t" dir="ltr">browser</bdi></button>
+          <button type="button" data-opt="c"><bdi class="t" dir="ltr">library</bdi> ديال React غير فال <bdi class="t" dir="ltr">backend</bdi></button>
+        </div>
+        <p class="fb" data-fb></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">12</p>
+      <h2>🛠️ تحدي</h2>
+      <p><span class="lvl">🟡 متوسط</span></p>
+      <p>
+        فكّري فـ
+        <bdi class="t" dir="ltr">Next.js</bdi>
+        app ديالك.
+        عطي <bdi class="t" dir="ltr">example</bdi> واحد <bdi class="t" dir="ltr">code</bdi> خاصو يعيش فـ Node (أو <bdi class="t" dir="ltr">server</bdi> ديال Next)،
+        و <bdi class="t" dir="ltr">example</bdi> واحد خاصو يبقى فـ <bdi class="t" dir="ltr">browser</bdi>.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">13</p>
+      <h2>⚠️ أغلاط شائعة</h2>
+      <ul>
+        <li>«خصني نبدل الـ <bdi class="t" dir="ltr">language</bdi> لـ Python باش نولي AI.» — لا. فهاد الـ <bdi class="t" dir="ltr">course</bdi> Node كافي.</li>
+        <li>«Node = npm برك.» — npm هو <bdi class="t" dir="ltr">tool</bdi>. Node هو اللي كيجري الـ <bdi class="t" dir="ltr">code</bdi>.</li>
+        <li>«نقدر نستعمل document فـ Node.» — لا.</li>
+        <li>«Cloudflare و Node نفس الشيء.» — لا. غادي نفصلوهم من بعد.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p class="num">14</p>
+      <h2>🔄 Recap</h2>
+      <p>
+        تذكّري ملي شرحنا الحلقة Build / Measure / Improve:
+        MEASURE غادي يجرى غالباً فـ Node (سكريبت كيسول الـ agent ويحسب النقط).
+      </p>
+      <p>نفس JS. بلاصة جديدة. <bdi class="t" dir="ltr">APIs</bdi> جديدة. ماشي <bdi class="t" dir="ltr">language</bdi> جديدة.</p>
+    </section>
+
+    <section class="section">
+      <p class="num">15</p>
+      <h2>🎯 شنو تتذكّري</h2>
+      <div class="ok">
+        <ol>
+          <li>Node = runtime، ماشي <bdi class="t" dir="ltr">language</bdi>.</li>
+          <li>الـ <bdi class="t" dir="ltr">browser</bdi> عندو DOM. Node عندو <bdi class="t" dir="ltr">files</bdi> و <bdi class="t" dir="ltr">network</bdi>.</li>
+          <li>الجاي: كيفاش تشغّلي <bdi class="t" dir="ltr">file</bdi> Node، وشنو كيدير <bdi class="t" dir="ltr">npm</bdi> بحال اللي كتعرفي من الـ <bdi class="t" dir="ltr">project</bdi>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <aside class="teacher">
+      <p>إلا بقيتي خالطة بين Node و npm و Next، كتبي شنو بالضبط. نشرح برسم آخر.</p>
+      <p class="source">
+        المصدر:
+        <a href="https://nodejs.org/learn/getting-started/introduction-to-nodejs" dir="ltr">nodejs.org — Introduction to Node.js</a>
+      </p>
+      <p><a href="../index.html">الخريطة</a></p>
+    </aside>
+  </div>
+  <script src="../assets/course.js"></script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lesson 1 — شنو هو AI Engineer</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body data-root=".." data-page="0002">
+  <div class="wrap">
+    <nav class="site-nav" data-nav></nav>
+
+    <p class="kicker">الفصل 1 · Introduction · مفهوم واحد</p>
+    <h1>الـ <bdi class="t" dir="ltr">model</bdi> محرّك. نتي كتركّبي الطوموبيل</h1>
+    <p class="lede">
+      فهاد الـ
+      <bdi class="t" dir="ltr">course</bdi>
+      ما غاديش تدرّبي
+      <bdi class="t" dir="ltr">model</bdi>.
+      غادي تاخدي
+      <bdi class="t" dir="ltr">model</bdi>
+      جاهز، وتحطّيه وسط
+      <bdi class="t" dir="ltr">app</bdi>
+      <bdi class="t" dir="ltr">React</bdi>
+      كتعرفيه:
+      <bdi class="t" dir="ltr">canvas</bdi>
+      و
+      <bdi class="t" dir="ltr">chat</bdi>
+      كيرسم عليه.
+    </p>
+
+    <div class="legend">
+      <span class="chip fe"><i></i> Frontend</span>
+      <span class="chip be"><i></i> Agent</span>
+      <span class="chip md"><i></i> AI Model</span>
+      <span class="chip ex"><i></i> Tool</span>
+      <span class="chip da"><i></i> Eval</span>
+    </div>
+
+    <section class="section">
+      <p class="num">1</p>
+      <h2>🎯 شنو كنتعلمو؟</h2>
+      <p>
+        <bdi class="t" dir="ltr">AI Engineer</bdi>
+        كياخد
+        <bdi class="t" dir="ltr">foundation model</bdi>
+        جاهز (بحال
+        <bdi class="t" dir="ltr">GPT</bdi>)
+        وكيحوّلو لـ
+        <bdi class="t" dir="ltr">feature</bdi>
+        فـ
+        <bdi class="t" dir="ltr">app</bdi>
+        تقدر تعتمدي عليها.
+        الخدمة ديالك:
+        <bdi class="t" dir="ltr">context</bdi>،
+        <bdi class="t" dir="ltr">tools</bdi>،
+        <bdi class="t" dir="ltr">evals</bdi>،
+        و
+        <bdi class="t" dir="ltr">reliability</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">training</bdi>
+        ديال الـ
+        <bdi class="t" dir="ltr">model</bdi>
+        ماشي خدمتك.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">2</p>
+      <h2>🤔 علاش محتاجاه؟</h2>
+      <p>
+        نتي ديجا كتبني واجهات بـ
+        <bdi class="t" dir="ltr">React</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">repo</bdi>
+        <a href="https://github.com/Hendrixer/ai-engineering-fundamentals" dir="ltr">ai-engineering-fundamentals</a>
+        كيعطي نفس الفكرة فـ
+        <bdi class="t" dir="ltr">project</bdi>
+        واحد:
+        <bdi class="t" dir="ltr">canvas</bdi>
+        ديال
+        <bdi class="t" dir="ltr">Excalidraw</bdi>
+        + 
+        <bdi class="t" dir="ltr">chat</bdi>.
+        فالأول الـ
+        <bdi class="t" dir="ltr">chat</bdi>
+        ما كيدير والو.
+        من بعد كيولي
+        <bdi class="t" dir="ltr">agent</bdi>
+        كيرسم.
+      </p>
+      <p>
+        إلا بقيتي غير كتنادي الـ
+        <bdi class="t" dir="ltr">API</bdi>
+        وكتحكمي بالعين، ما عندكش طريقة تعرف واش الـ
+        <bdi class="t" dir="ltr">change</bdi>
+        نفع.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">3</p>
+      <h2>🧠 شرح دارجة</h2>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">model</bdi>
+        كيقرا
+        <bdi class="t" dir="ltr">text</bdi>
+        وكيرجّع
+        <bdi class="t" dir="ltr">text</bdi>
+        (أو قرار: «عيّط لهاد
+        <bdi class="t" dir="ltr">function</bdi>»).
+        ما كيشوفش الـ
+        <bdi class="t" dir="ltr">canvas</bdi>
+        بوحدو، وما كيرسمش بالماوس.
+        نتي كتعطيه: شنو بغى الـ
+        <bdi class="t" dir="ltr">user</bdi>،
+        شنو كاين فالـ
+        <bdi class="t" dir="ltr">canvas</bdi>،
+        وشنو الـ
+        <bdi class="t" dir="ltr">tools</bdi>
+        المسموحة.
+      </p>
+      <p>
+        الـ
+        <bdi class="t" dir="ltr">tool</bdi>
+        هنا
+        <bdi class="t" dir="ltr">function</bdi>
+        عادية عندها
+        <bdi class="t" dir="ltr">schema</bdi>
+        واضح.
+        مثلاً «زيد
+        <bdi class="t" dir="ltr">rectangle</bdi>
+        و
+        <bdi class="t" dir="ltr">label</bdi>».
+        الـ
+        <bdi class="t" dir="ltr">code</bdi>
+        ديالك هو اللي كيرسم فـ
+        <bdi class="t" dir="ltr">browser</bdi>.
+        الـ
+        <bdi class="t" dir="ltr">model</bdi>
+        غير كيختار الـ
+        <bdi class="t" dir="ltr">tool</bdi>
+        وكيعمّر الـ
+        <bdi class="t" dir="ltr">fields</bdi>.
+      </p>
+      <p>
+        ومن بعد كتقيسي: نفس الـ
+        <bdi class="t" dir="ltr">questions</bdi>،
+        كل مرة، وكتشوفي الـ
+        <bdi class="t" dir="ltr">score</bdi>
+        طلع ولا هبط.
+        هاد الحلقة هي الـ
+        <bdi class="t" dir="ltr">course</bdi>
+        كامل:
+        <bdi class="t" dir="ltr">Build → Eval → Improve → Eval</bdi>.
+      </p>
+      <p>
+        المصدر:
+        <a href="https://github.com/Hendrixer/ai-engineering-fundamentals/blob/main/lessons/01-intro-to-ai-engineering/index.md" dir="ltr">Lesson 1 notes</a>
+        و
+        <a href="https://newsletter.pragmaticengineer.com/p/the-ai-engineering-stack" dir="ltr">Chip Huyen — The AI Engineering Stack</a>.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">4</p>
+      <h2>🌍 تشبيه</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>ML Engineer</h3>
+          <p>كيبني الموتور: الـ <bdi class="t" dir="ltr">data</bdi>، الـ <bdi class="t" dir="ltr">training</bdi>، دقة الـ <bdi class="t" dir="ltr">model</bdi> نفسو.</p>
+        </article>
+        <article class="card">
+          <h3>AI Engineer</h3>
+          <p>كترّكب الطوموبيل حول موتور جاهز: المقود، الفرامل، والعداد.</p>
+        </article>
+      </div>
+      <p>
+        المقود = الـ <bdi class="t" dir="ltr">chat</bdi> والـ <bdi class="t" dir="ltr">canvas</bdi>.
+        الفرامل = موافقة الإنسان قبل المسح.
+        العداد = الـ
+        <bdi class="t" dir="ltr">evals</bdi>.
+        بلا عدّاد، كتسوقي بالحاسة.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">5</p>
+      <h2>🎨 الرسم</h2>
+      <p>الـ <bdi class="t" dir="ltr">screen</bdi> فأول يوم. الـ <bdi class="t" dir="ltr">canvas</bdi> خدام. الـ <bdi class="t" dir="ltr">chat</bdi> باقي ما مربوطش بالـ <bdi class="t" dir="ltr">model</bdi>.</p>
+      <div class="screen" aria-label="canvas بجنب chat">
+        <div class="pane">
+          <h3><bdi class="t" dir="ltr">canvas</bdi> — <bdi class="t" dir="ltr">Excalidraw</bdi></h3>
+          <span class="shape fe" dir="ltr">User → Login</span>
+          <p><bdi class="t" dir="ltr">rectangles</bdi>، <bdi class="t" dir="ltr">arrows</bdi>، <bdi class="t" dir="ltr">text</bdi>. نتي تقدر ترسمي بيدّك دابا.</p>
+        </div>
+        <div class="pane">
+          <h3><bdi class="t" dir="ltr">chat</bdi></h3>
+          <div class="msg" dir="ltr">empty message…</div>
+          <div class="msg">Describe a diagram…</div>
+          <p>الـ <bdi class="t" dir="ltr">button</bdi> <bdi class="t" dir="ltr">Send</bdi> دابا ما كيدير والو. الربط يجي من بعد.</p>
+        </div>
+      </div>
+
+      <p>ملي يتكمّل الـ agent، <bdi class="t" dir="ltr">request</bdi> واحد كيهبط هكا:</p>
+      <div class="flow" aria-label="مسار request الرسم">
+        <div class="box fe" dir="ltr">text فـ React</div>
+        <div class="arrow">↓</div>
+        <div class="box be">Agent</div>
+        <div class="arrow">↓</div>
+        <div class="box md">LLM</div>
+        <div class="arrow">↓</div>
+        <div class="box ex" dir="ltr">tool: add elements</div>
+        <div class="arrow">↓</div>
+        <div class="box fe" dir="ltr">canvas كيرسم</div>
+      </div>
+      <p>كل <bdi class="t" dir="ltr">box</bdi> هو الخطوة الجاية. الـ <bdi class="t" dir="ltr">user</bdi> ما كيهضرش مع الـ <bdi class="t" dir="ltr">model</bdi> مباشرة.</p>
+
+      <p>والانضباط ديال الـ <bdi class="t" dir="ltr">course</bdi>:</p>
+      <div class="flow">
+        <div class="box fe">BUILD — chat + agent كيرسم</div>
+        <div class="arrow">↓</div>
+        <div class="box da" dir="ltr">EVAL — نفس examples، score</div>
+        <div class="arrow">↓</div>
+        <div class="box be">IMPROVE — حاجة وحدة</div>
+        <div class="arrow">↓</div>
+        <div class="box md">عاودي EVAL</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">6</p>
+      <h2>🔍 الخطوات فدماغك</h2>
+      <ol>
+        <li>الـ <bdi class="t" dir="ltr">user</bdi> كتبّات <bdi class="t" dir="ltr">message</bdi>، ماشي <bdi class="t" dir="ltr">code</bdi>.</li>
+        <li>الـ <bdi class="t" dir="ltr">message</bdi> تمشي للـ <bdi class="t" dir="ltr">agent</bdi> على الـ <bdi class="t" dir="ltr">server</bdi>. الـ <bdi class="t" dir="ltr">key</bdi> ما يبقاش فـ <bdi class="t" dir="ltr">browser</bdi>.</li>
+        <li>الـ <bdi class="t" dir="ltr">model</bdi> يختار <bdi class="t" dir="ltr">tool</bdi>، ما يرسمش <bdi class="t" dir="ltr">pixels</bdi>.</li>
+        <li>الـ <bdi class="t" dir="ltr">code</bdi> ديالك يحوّل نتيجة الـ <bdi class="t" dir="ltr">tool</bdi> لـ <bdi class="t" dir="ltr">elements</bdi> على الـ <bdi class="t" dir="ltr">canvas</bdi>.</li>
+        <li>من بعد، نفس الـ <bdi class="t" dir="ltr">message</bdi> تدخل فـ <bdi class="t" dir="ltr">eval</bdi> باش تعرفي واش الـ <bdi class="t" dir="ltr">version</bdi> الجديدة حسن.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <p class="num">7</p>
+      <h2>💻 <bdi class="t" dir="ltr">code</bdi> صغير</h2>
+      <p>
+        هاد الـ
+        <bdi class="t" dir="ltr">shape</bdi>
+        هو
+        <bdi class="t" dir="ltr">root</bdi>
+        ديال الـ
+        <bdi class="t" dir="ltr">app</bdi>
+        فبداية الـ
+        <bdi class="t" dir="ltr">repo</bdi>.
+        جوج
+        <bdi class="t" dir="ltr">components</bdi>
+        <bdi class="t" dir="ltr">React</bdi>
+        كتعرفيهم. الجديد هو شنو غادي يوقع من بعد
+        <bdi class="t" dir="ltr">Send</bdi>.
+      </p>
+      <pre dir="ltr" class="code-block"><code><span class="k">export default function</span> App() {
+  <span class="k">return</span> (
+    &lt;div className=<span class="s">"app"</span>&gt;
+      &lt;Canvas /&gt;       <span class="c">{/* canvas. خدام اليوم */}</span>
+      &lt;ChatPanel /&gt;    <span class="c">{/* chat. Send باقي فارغ */}</span>
+    &lt;/div&gt;
+  );
+}</code></pre>
+      <p>ملي الـ <bdi class="t" dir="ltr">user</bdi> يطلب <bdi class="t" dir="ltr">diagram</bdi>، الـ <bdi class="t" dir="ltr">model</bdi> ما كيرجّعش <bdi class="t" dir="ltr">image</bdi>. كيرجّع <bdi class="t" dir="ltr">data</bdi> بحال هادي، والـ <bdi class="t" dir="ltr">code</bdi> ديالك كيرسمها:</p>
+      <pre dir="ltr" class="code-block"><code>{
+  <span class="s">"type"</span>: <span class="s">"rectangle"</span>,
+  <span class="s">"label"</span>: <span class="s">"User"</span>
+}</code></pre>
+      <p>
+        بحال
+        <bdi class="t" dir="ltr">setState</bdi>:
+        نتي ما كترسميش الـ
+        <bdi class="t" dir="ltr">pixel</bdi>.
+        كتعطي الـ
+        <bdi class="t" dir="ltr">data</bdi>،
+        و
+        <bdi class="t" dir="ltr">React</bdi>
+        / الـ
+        <bdi class="t" dir="ltr">canvas</bdi>
+        كيرسمو.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">8</p>
+      <h2>⚛️ مقارنة مع <bdi class="t" dir="ltr">React</bdi></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>اللي كتعرفيه</th>
+            <th>فالـ agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>الـ <bdi class="t" dir="ltr">component</bdi> كيرجع <bdi class="t" dir="ltr">JSX</bdi></td>
+            <td>الـ <bdi class="t" dir="ltr">model</bdi> كيرجّع قرار: أي <bdi class="t" dir="ltr">tool</bdi>، وبأي <bdi class="t" dir="ltr">fields</bdi></td>
+          </tr>
+          <tr>
+            <td>ما تحطّيش <bdi class="t" dir="ltr">secret key</bdi> فـ <bdi class="t" dir="ltr">client</bdi></td>
+            <td>الـ <bdi class="t" dir="ltr">call</bdi> للـ <bdi class="t" dir="ltr">model</bdi> كيمشي من الـ <bdi class="t" dir="ltr">agent</bdi>، ماشي من الـ <bdi class="t" dir="ltr">chat</bdi></td>
+          </tr>
+          <tr>
+            <td><bdi class="t" dir="ltr">tests</bdi> على <bdi class="t" dir="ltr">function</bdi> ثابتة</td>
+            <td><bdi class="t" dir="ltr">evals</bdi> على <bdi class="t" dir="ltr">examples</bdi>، حيت الـ <bdi class="t" dir="ltr">response</bdi> ما كيبقاش بحال بحال كل مرة</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <p class="num">9</p>
+      <h2>🌍 <bdi class="t" dir="ltr">example</bdi> واقعي</h2>
+      <p>الـ <bdi class="t" dir="ltr">user</bdi> كتبّات:</p>
+      <div class="note" dir="ltr">draw a sequence diagram of an OAuth login</div>
+      <p>شنو خاص يوقع، بالترتيب:</p>
+      <ol>
+        <li>الـ <bdi class="t" dir="ltr">chat</bdi> يبعث الـ <bdi class="t" dir="ltr">message</bdi> للـ <bdi class="t" dir="ltr">agent</bdi>.</li>
+        <li>الـ <bdi class="t" dir="ltr">model</bdi> يفهم: خاصو <bdi class="t" dir="ltr">rectangles</bdi> (User, App, Provider) و <bdi class="t" dir="ltr">arrows</bdi> بيناتهم.</li>
+        <li>ينادي <bdi class="t" dir="ltr">tool</bdi> «زيد <bdi class="t" dir="ltr">elements</bdi>»، ما يقولش غير «ها <bdi class="t" dir="ltr">diagram</bdi> زوين».</li>
+        <li>الـ <bdi class="t" dir="ltr">canvas</bdi> يورّي الـ <bdi class="t" dir="ltr">arrows</bdi>. إلا مسحات كلشي بلا <bdi class="t" dir="ltr">confirmation</bdi>، هاديك غلطة ثقة — غادي نصلحوها من بعد بـ <bdi class="t" dir="ltr">approval</bdi>.</li>
+      </ol>
+      <p>
+        إلا بدّلتي الـ <bdi class="t" dir="ltr">prompt</bdi> والـ <bdi class="t" dir="ltr">canvas</bdi> وعدد الـ <bdi class="t" dir="ltr">tools</bdi> فنفس النهار،
+        ومن بعد الـ <bdi class="t" dir="ltr">diagram</bdi> تحسّن، ما عرفتيش شنو اللي نفع.
+        <bdi class="t" dir="ltr">change</bdi> واحد، من بعد <bdi class="t" dir="ltr">eval</bdi>.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">10</p>
+      <h2>🧪 تمرين</h2>
+      <p><span class="lvl">🟢 ساهل</span></p>
+      <p>جاوبي بجوج جمل، بلا ما تحلّي الحل:</p>
+      <ol>
+        <li>علاش الـ <bdi class="t" dir="ltr">chat</bdi> فاليوم الأول ما كيرسمش؟</li>
+        <li>واش الـ <bdi class="t" dir="ltr">model</bdi> هو اللي كيحط الـ <bdi class="t" dir="ltr">rectangle</bdi> على الـ <bdi class="t" dir="ltr">canvas</bdi>؟</li>
+      </ol>
+      <details class="solution">
+        <summary>بعد ما تجاوبي، فتحي</summary>
+        <p>الـ <bdi class="t" dir="ltr">chat</bdi> باقي ما مربوطش بالـ <bdi class="t" dir="ltr">agent</bdi>. الـ <bdi class="t" dir="ltr">button</bdi> كاين، والفعل مزيّر للـ <bdi class="t" dir="ltr">lesson</bdi> اللي من بعد.</p>
+        <p>لا. الـ <bdi class="t" dir="ltr">model</bdi> كيختار <bdi class="t" dir="ltr">data</bdi> ديال الـ <bdi class="t" dir="ltr">elements</bdi>. <bdi class="t" dir="ltr">code</bdi> الـ <bdi class="t" dir="ltr">canvas</bdi> هو اللي كيرسم.</p>
+      </details>
+    </section>
+
+    <section class="section">
+      <p class="num">11</p>
+      <h2>❓ Quiz</h2>
+      <div
+        class="quiz"
+        data-quiz
+        data-answer="b"
+        data-ok="صحيح. الـ model جاهز. نتي كتركّبي السيستيم حولو وتقيسيه."
+        data-bad="فكّري فالتشبيه: واش كنبنيو الموتور، ولا الطوموبيل؟"
+      >
+        <p>شنو خدمة <bdi class="t" dir="ltr">AI Engineer</bdi> فهاد الـ <bdi class="t" dir="ltr">course</bdi>؟</p>
+        <div class="opts">
+          <button type="button" data-opt="a">كيدرّب الـ <bdi class="t" dir="ltr">model</bdi> من الصفر دائماً</button>
+          <button type="button" data-opt="b">كيبني السيستيم حول <bdi class="t" dir="ltr">model</bdi> جاهز</button>
+          <button type="button" data-opt="c">كيبدّل غير <bdi class="t" dir="ltr">UI</bdi> ديال <bdi class="t" dir="ltr">chat</bdi></button>
+        </div>
+        <p class="fb" data-fb></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="num">12</p>
+      <h2>🛠️ تحدي</h2>
+      <p><span class="lvl">🟡 متوسط</span></p>
+      <p>
+        خذي
+        <bdi class="t" dir="ltr">page</bdi>
+        فـ
+        <bdi class="t" dir="ltr">Next.js</bdi>
+        خدامة عندك (<bdi class="t" dir="ltr">form</bdi>، <bdi class="t" dir="ltr">list</bdi>، <bdi class="t" dir="ltr">canvas</bdi>).
+        كتبي <bdi class="t" dir="ltr">message</bdi> وحدة الـ <bdi class="t" dir="ltr">user</bdi> يقدر يقولها للـ
+        <bdi class="t" dir="ltr">chat</bdi>،
+        وشنو الـ
+        <bdi class="t" dir="ltr">tool</bdi>
+        اللي خاصها تتنفّذ (ماشي <bdi class="t" dir="ltr">text</bdi> إنشائي).
+        <bdi class="t" dir="ltr">example</bdi>: «زيد <bdi class="t" dir="ltr">rectangle</bdi> الـ <bdi class="t" dir="ltr">label</bdi> ديالو Login» → <bdi class="t" dir="ltr">tool</bdi> تزيد <bdi class="t" dir="ltr">element</bdi>.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">13</p>
+      <h2>⚠️ أغلاط شائعة</h2>
+      <ul>
+        <li>«AI Engineer كيدرّب الـ <bdi class="t" dir="ltr">model</bdi>.» — فهاد الـ <bdi class="t" dir="ltr">course</bdi>، الـ <bdi class="t" dir="ltr">model</bdi> معطى. نتي كتركّبي حولو.</li>
+        <li>«نجرّب فـ <bdi class="t" dir="ltr">chat</bdi> ونشوف واش عجبني.» — العين ما كتقوش الرجوع للور. خاص <bdi class="t" dir="ltr">score</bdi> على نفس الـ <bdi class="t" dir="ltr">examples</bdi>.</li>
+        <li>«الـ <bdi class="t" dir="ltr">model</bdi> كيرسم الـ <bdi class="t" dir="ltr">image</bdi>.» — كيرجّع <bdi class="t" dir="ltr">elements</bdi>. الـ <bdi class="t" dir="ltr">canvas</bdi> كيرسم.</li>
+        <li>«نبدّل كلشي دفعة وحدة.» — ما غاديش تعرفي شنو نفع.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p class="num">14</p>
+      <h2>🔄 Recap</h2>
+      <p>
+        الـ <bdi class="t" dir="ltr">repo</bdi> كيبني <bdi class="t" dir="ltr">app</bdi> ديال الرسم:
+        <bdi class="t" dir="ltr">canvas</bdi>
+        +
+        <bdi class="t" dir="ltr">chat</bdi>.
+        الأيام اللولة: الـ agent يخدم، الـ chat يتوصّل، والـ eval يعطيك رقم أساس.
+        من بعد كل <bdi class="t" dir="ltr">lesson</bdi> كيحسّن حاجة وحدة وكيعاود الـ <bdi class="t" dir="ltr">eval</bdi>.
+      </p>
+      <p>
+        المبادئ اللي غادي نرجعو ليهم جاية من
+        <a href="https://github.com/humanlayer/12-factor-agents" dir="ltr">12-Factor Agents</a>:
+        الـ <bdi class="t" dir="ltr">tool</bdi> هي <bdi class="t" dir="ltr">function</bdi>، الـ <bdi class="t" dir="ltr">context</bdi> ملكك، والـ <bdi class="t" dir="ltr">eval</bdi> هو <bdi class="t" dir="ltr">test</bdi> ديال السيستيم.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="num">15</p>
+      <h2>🎯 شنو تتذكّري</h2>
+      <div class="ok">
+        <ol>
+          <li>الـ <bdi class="t" dir="ltr">model</bdi> محرّك جاهز. نتي كتركّبي الطوموبيل.</li>
+          <li>الـ <bdi class="t" dir="ltr">diagram</bdi> = <bdi class="t" dir="ltr">data</bdi> ديال <bdi class="t" dir="ltr">elements</bdi>، ماشي <bdi class="t" dir="ltr">image</bdi> من الـ <bdi class="t" dir="ltr">model</bdi>.</li>
+          <li>Build، من بعد Eval، من بعد <bdi class="t" dir="ltr">change</bdi> واحد.</li>
+        </ol>
+      </div>
+    </section>
+
+    <aside class="teacher">
+      <p>إلا «agent» باقي ضبابي، كتبي الـ <bdi class="t" dir="ltr">message</bdi> اللي ما دخلاتش. نعاودوها برسم أصغر.</p>
+      <p class="source">
+        المصدر:
+        <a href="https://github.com/Hendrixer/ai-engineering-fundamentals/blob/main/lessons/01-intro-to-ai-engineering/index.md" dir="ltr">Hendrixer — Intro to AI Engineering</a>
+      </p>
+      <p>
+        <a href="0003-nodejs-vs-browser.html"><bdi class="t" dir="ltr">lesson</bdi> 2: Node مقابل <bdi class="t" dir="ltr">browser</bdi></a>
+        ·
+        <a href="../index.html">الخريطة</a>
+      </p>
+    </aside>
+  </div>
+  <script src="../assets/course.js"></script>
+</body>
+</html>
